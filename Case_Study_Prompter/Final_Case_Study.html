@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Hologram Desk Buddy v2.0: Interactive Smart Companion - Final Case Study</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #1a202c;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      font-size: 13.5px;
+    }
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 2.5px solid #2b6cb0;
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+    }
+    .header h1 {
+      margin: 0 0 6px 0;
+      font-size: 24px;
+      color: #1a365d;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      color: #4a5568;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .members-badge {
+      display: inline-block;
+      background-color: #ebf8ff;
+      border: 1px solid #bee3f8;
+      color: #2b6cb0;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .section-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      page-break-inside: avoid;
+    }
+    .section-title {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #2c5282;
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-num {
+      background: #2b6cb0;
+      color: white;
+      font-size: 12px;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 12.5px;
+    }
+    th, td {
+      padding: 7px 10px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+    th {
+      background-color: #f7fafc;
+      color: #2d3748;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .img-box {
+      text-align: center;
+      margin: 12px 0;
+      background: #f7fafc;
+      border: 1px dashed #cbd5e0;
+      border-radius: 6px;
+      padding: 12px;
+    }
+    .img-box img {
+      max-width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+    .img-placeholder {
+      color: #718096;
+      font-style: italic;
+      padding: 25px 15px;
+      font-size: 12.5px;
+    }
+    .link-button {
+      display: inline-block;
+      background: #3182ce;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+    .code-container {
+      background-color: #1a202c;
+      color: #e2e8f0;
+      padding: 12px 14px;
+      border-radius: 6px;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 11px;
+      line-height: 1.42;
+      overflow-x: auto;
+      white-space: pre;
+      max-height: 480px;
+      page-break-inside: auto;
+    }
+    .total-cost-banner {
+      margin-top: 10px;
+      background: #feebc8;
+      border: 1px solid #fbd38d;
+      color: #744210;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-align: right;
+    }
+    .footer-note {
+      font-size: 11px;
+      color: #a0aec0;
+      text-align: center;
+      margin-top: 25px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- HEADER & MEMBERS -->
+    <div class="header">
+      <h1>3D Hologram Desk Buddy v2.0: Interactive Smart Companion</h1>
+      <div class="subtitle">Final Case Study & Engineering Report</div>
+      <div class="members-badge">
+        👥 <strong>MEMBERS:</strong> <strong>Rairolf Rabang</strong>, <strong>Nicole Margareth Sibal</strong>
+      </div>
+    </div>
+
+    <!-- 1. UPDATED IMAGE OF CIRCUIT DESIGN -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">1</span>
+        Updated Image of Circuit Design (WOKWI / Tinkercad / Diagram)
+      </h2>
+      <p>Circuit schematic and Pepper&#x27;s Ghost optical assembly of the 3D Hologram Desk Buddy v2.0. Powered by an Arduino UNO R3 from the MakerLAB Upgraded Learning Kit v2, the device uses a 0.96&quot; I2C OLED display (SSD1306) projecting upward/downward onto a 45-degree clear acrylic reflector, alongside an interactive Tilt Ball Switch (Pin 2), Photoresistor LDR (Pin A0), and DHT11 Temp/Humidity module (Pin 4) compactly organized on an extra-small mini breadboard.</p>
+      <p><strong>Simulation Link:</strong> <a href="https://wokwi.com/ (Optional Wokwi or Tinkercad simulation link)" target="_blank">https://wokwi.com/ (Optional Wokwi or Tinkercad simulation link)</a></p>
+      <div class="img-box">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4ODAgNDgwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmJnIHsgZmlsbDogIzBiMTEyMDsgfQogICAgICAuZ3JpZCB7IHN0cm9rZTogIzFlMjkzYjsgc3Ryb2tlLXdpZHRoOiAxOyBzdHJva2UtZGFzaGFycmF5OiA0LDQ7IH0KICAgICAgLmJveCB7IHJ4OiA4OyByeTogODsgc3Ryb2tlLXdpZHRoOiAxLjU7IH0KICAgICAgLmFyZC1ib3ggeyBmaWxsOiAjMDQyZjJlOyBzdHJva2U6ICMxNGI4YTY7IHN0cm9rZS13aWR0aDogMjsgfQogICAgICAub2xlZC1ib3ggeyBmaWxsOiAjMGYxNzJhOyBzdHJva2U6ICMzOGJkZjg7IH0KICAgICAgLnByaXNtLWJveCB7IGZpbGw6ICMwZjE3MmE7IHN0cm9rZTogIzgxOGNmODsgc3Ryb2tlLWRhc2hhcnJheTogNCwzOyB9CiAgICAgIC50aWx0LWJveCB7IGZpbGw6ICMwZjE3MmE7IHN0cm9rZTogI2MwODRmYzsgfQogICAgICAuZGh0LWJveCB7IGZpbGw6ICMwZjE3MmE7IHN0cm9rZTogIzRhZGU4MDsgfQogICAgICAubGRyLWJveCB7IGZpbGw6ICMwZjE3MmE7IHN0cm9rZTogI2ZiYmYyNDsgfQogICAgICAuYmF0LWJveCB7IGZpbGw6ICMwZjE3MmE7IHN0cm9rZTogI2Y4NzE3MTsgfQogICAgICAudGV4dC10aXRsZSB7IGZvbnQtZmFtaWx5OiAtYXBwbGUtc3lzdGVtLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDE1cHg7IGZvbnQtd2VpZ2h0OiA4MDA7IGZpbGw6ICNmOGZhZmM7IGxldHRlci1zcGFjaW5nOiAwLjVweDsgfQogICAgICAudGV4dC1hdXRob3JzIHsgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTJweDsgZm9udC13ZWlnaHQ6IDYwMDsgZmlsbDogIzM4YmRmODsgfQogICAgICAudGV4dC1oZWFkIHsgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIG1vbm9zcGFjZTsgZm9udC1zaXplOiAxMnB4OyBmb250LXdlaWdodDogYm9sZDsgZmlsbDogI2ZmZmZmZjsgfQogICAgICAudGV4dC1kZXNjIHsgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogMTBweDsgZmlsbDogIzk0YTNiODsgfQogICAgICAudGV4dC1waW4geyBmb250LWZhbWlseTogLWFwcGxlLXN5c3RlbSwgbW9ub3NwYWNlOyBmb250LXNpemU6IDEwcHg7IGZvbnQtd2VpZ2h0OiA2MDA7IGZpbGw6ICNlMmU4ZjA7IH0KICAgICAgLndpcmUtNXYgeyBzdHJva2U6ICNlZjQ0NDQ7IHN0cm9rZS13aWR0aDogMi4yOyBmaWxsOiBub25lOyB9CiAgICAgIC53aXJlLWduZCB7IHN0cm9rZTogIzY0NzQ4Yjsgc3Ryb2tlLXdpZHRoOiAyLjI7IGZpbGw6IG5vbmU7IH0KICAgICAgLndpcmUtc2RhIHsgc3Ryb2tlOiAjMzhiZGY4OyBzdHJva2Utd2lkdGg6IDIuMjsgZmlsbDogbm9uZTsgfQogICAgICAud2lyZS1zY2wgeyBzdHJva2U6ICNlYWIzMDg7IHN0cm9rZS13aWR0aDogMi4yOyBmaWxsOiBub25lOyB9CiAgICAgIC53aXJlLWQyIHsgc3Ryb2tlOiAjYzA4NGZjOyBzdHJva2Utd2lkdGg6IDIuMjsgZmlsbDogbm9uZTsgfQogICAgICAud2lyZS1kNCB7IHN0cm9rZTogIzRhZGU4MDsgc3Ryb2tlLXdpZHRoOiAyLjI7IGZpbGw6IG5vbmU7IH0KICAgICAgLndpcmUtYTAgeyBzdHJva2U6ICNmYjkyM2M7IHN0cm9rZS13aWR0aDogMi4yOyBmaWxsOiBub25lOyB9CiAgICAgIC53aXJlLWJhdCB7IHN0cm9rZTogI2RjMjYyNjsgc3Ryb2tlLXdpZHRoOiAyLjI7IHN0cm9rZS1kYXNoYXJyYXk6IDQsMzsgZmlsbDogbm9uZTsgfQogICAgICAucmF5IHsgc3Ryb2tlOiAjN2RkM2ZjOyBzdHJva2Utd2lkdGg6IDEuNTsgc3Ryb2tlLWRhc2hhcnJheTogMywzOyBmaWxsOiBub25lOyB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KCiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI4ODAiIGhlaWdodD0iNDgwIiBjbGFzcz0iYmciIHJ4PSIxMCIvPgoKICA8IS0tIFRvcCBIZWFkZXIgQmFyIC0tPgogIDxyZWN0IHg9IjIwIiB5PSIxMCIgd2lkdGg9Ijg0MCIgaGVpZ2h0PSIzNiIgcng9IjYiIGZpbGw9IiMxZTI5M2IiLz4KICA8dGV4dCB4PSIzNSIgeT0iMzMiIGNsYXNzPSJ0ZXh0LXRpdGxlIj5ERVNLIEJVRERZIHYyLjAgJiM4MjI2OyBDSVJDVUlUIFNDSEVNQVRJQyAmYW1wOyBIQVJEV0FSRSBBUkNISVRFQ1RVUkU8L3RleHQ+CiAgPHRleHQgeD0iNjEwIiB5PSIzMyIgY2xhc3M9InRleHQtYXV0aG9ycyI+UmFpcm9sZiBSYWJhbmcgJmFtcDsgTmljb2xlIE1hcmdhcmV0aCBTaWJhbDwvdGV4dD4KCiAgPCEtLSA9PT09PT09PT09PT09PT09PSBMRUZUIENPTFVNTiA9PT09PT09PT09PT09PT09PSAtLT4KICA8IS0tIDEuIDAuOTYiIE9MRUQgRGlzcGxheSAtLT4KICA8cmVjdCB4PSIyNSIgeT0iNjAiIHdpZHRoPSIxOTUiIGhlaWdodD0iMTMwIiBjbGFzcz0iYm94IG9sZWQtYm94Ii8+CiAgPHJlY3QgeD0iMzUiIHk9IjcwIiB3aWR0aD0iMTc1IiBoZWlnaHQ9IjY1IiByeD0iNCIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSIjMDI4NGM3Ii8+CiAgPCEtLSBNaW5pIE9MRUQgRmFjZSAtLT4KICA8Y2lyY2xlIGN4PSI5NSIgY3k9IjEwMiIgcj0iOCIgZmlsbD0iIzM4YmRmOCIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMiIgcj0iOCIgZmlsbD0iIzM4YmRmOCIvPgogIDxwYXRoIGQ9Ik0gMTEyIDExMCBRIDEyMi41IDExOCAxMzMgMTEwIiBzdHJva2U9IiMzOGJkZjgiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPgogIDx0ZXh0IHg9IjM1IiB5PSIxNTIiIGNsYXNzPSJ0ZXh0LWhlYWQiPjAuOTYiIE1vbm9jaHJvbWUgT0xFRDwvdGV4dD4KICA8dGV4dCB4PSIzNSIgeT0iMTY3IiBjbGFzcz0idGV4dC1kZXNjIj5TU0QxMzA2ICYjODIyNjsgMTI4eDY0ICYjODIyNjsgSTJDIEFkZHJlc3MgMHgzQzwvdGV4dD4KICA8IS0tIE9MRUQgUGlucyBvbiBSaWdodCBlZGdlIG9mIE9MRUQgYm94IC0tPgogIDxjaXJjbGUgY3g9IjIyMCIgY3k9Ijc4IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48dGV4dCB4PSIxODgiIHk9IjgyIiBjbGFzcz0idGV4dC1waW4iPkdORDwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSI5OCIgcj0iMy41IiBmaWxsPSIjZWY0NDQ0Ii8+PHRleHQgeD0iMTg4IiB5PSIxMDIiIGNsYXNzPSJ0ZXh0LXBpbiI+VkNDPC90ZXh0PgogIDxjaXJjbGUgY3g9IjIyMCIgY3k9IjExOCIgcj0iMy41IiBmaWxsPSIjZWFiMzA4Ii8+PHRleHQgeD0iMTg4IiB5PSIxMjIiIGNsYXNzPSJ0ZXh0LXBpbiI+U0NMPC90ZXh0PgogIDxjaXJjbGUgY3g9IjIyMCIgY3k9IjEzOCIgcj0iMy41IiBmaWxsPSIjMzhiZGY4Ii8+PHRleHQgeD0iMTg4IiB5PSIxNDIiIGNsYXNzPSJ0ZXh0LXBpbiI+U0RBPC90ZXh0PgoKICA8IS0tIDIuIE9wdGljYWwgUGVwcGVyJ3MgR2hvc3QgUmVmbGVjdG9yIC0tPgogIDxyZWN0IHg9IjI1IiB5PSIyMDIiIHdpZHRoPSIxOTUiIGhlaWdodD0iMTA1IiBjbGFzcz0iYm94IHByaXNtLWJveCIvPgogIDx0ZXh0IHg9IjM1IiB5PSIyMjIiIGNsYXNzPSJ0ZXh0LWhlYWQiIGZpbGw9IiNhNWI0ZmMiPlBlcHBlcidzIEdob3N0IFJlZmxlY3RvcjwvdGV4dD4KICA8dGV4dCB4PSIzNSIgeT0iMjM4IiBjbGFzcz0idGV4dC1kZXNjIj40NcKwIENsZWFyIEFjcnlsaWMgQmVhbSBTcGxpdHRlcjwvdGV4dD4KICA8IS0tIE1pbmkgUHJpc20gR3JhcGhpYyAtLT4KICA8bGluZSB4MT0iNDUiIHkxPSIyODUiIHgyPSIxMTUiIHkyPSIyNTAiIHN0cm9rZT0iIzgxOGNmOCIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8cGF0aCBkPSJNIDU1IDI1MCBMIDgwIDI2NyBMIDEzMCAyNjciIGNsYXNzPSJyYXkiLz4KICA8dGV4dCB4PSIxMzUiIHk9IjI3MSIgY2xhc3M9InRleHQtZGVzYyIgZmlsbD0iI2M3ZDJmZSI+M0QgRmxvYXRpbmcgRmFjZTwvdGV4dD4KCiAgPCEtLSAzLiA5ViBCYXR0ZXJ5IC0tPgogIDxyZWN0IHg9IjI1IiB5PSIzMjAiIHdpZHRoPSIxOTUiIGhlaWdodD0iOTUiIGNsYXNzPSJib3ggYmF0LWJveCIvPgogIDx0ZXh0IHg9IjM1IiB5PSIzNDUiIGNsYXNzPSJ0ZXh0LWhlYWQiIGZpbGw9IiNmY2E1YTUiPjlWIEFsa2FsaW5lIEJhdHRlcnk8L3RleHQ+CiAgPHRleHQgeD0iMzUiIHk9IjM2MiIgY2xhc3M9InRleHQtZGVzYyI+REMgQmFycmVsIEphY2sgLyBWSU4gSW5wdXQ8L3RleHQ+CiAgPHRleHQgeD0iMzUiIHk9IjM3NyIgY2xhc3M9InRleHQtZGVzYyI+UG9ydGFibGUgU3RhbmRhbG9uZSBQb3dlcjwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyMjAiIGN5PSIzNTAiIHI9IjMuNSIgZmlsbD0iI2RjMjYyNiIvPjx0ZXh0IHg9IjE4NSIgeT0iMzU0IiBjbGFzcz0idGV4dC1waW4iPigrKSBWSU48L3RleHQ+CiAgPGNpcmNsZSBjeD0iMjIwIiBjeT0iMzg1IiByPSIzLjUiIGZpbGw9IiM2NDc0OGIiLz48dGV4dCB4PSIxODUiIHk9IjM4OSIgY2xhc3M9InRleHQtcGluIj4oLSkgR05EPC90ZXh0PgoKICA8IS0tID09PT09PT09PT09PT09PT09IENFTlRFUjogQVJEVUlOTyBVTk8gUjMgPT09PT09PT09PT09PT09PT0gLS0+CiAgPHJlY3QgeD0iMjYwIiB5PSI2MCIgd2lkdGg9IjI3MCIgaGVpZ2h0PSIzNTUiIGNsYXNzPSJib3ggYXJkLWJveCIvPgogIDxyZWN0IHg9IjI4MCIgeT0iNzUiIHdpZHRoPSIyMzAiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSIjMTM0ZTRhIi8+CiAgPHRleHQgeD0iMzA1IiB5PSIxMDAiIGNsYXNzPSJ0ZXh0LWhlYWQiIGZvbnQtc2l6ZT0iMTQiPkFSRFVJTk8gVU5PIFIzPC90ZXh0PgogIDx0ZXh0IHg9IjMyNSIgeT0iMTMwIiBjbGFzcz0idGV4dC1kZXNjIiBmaWxsPSIjY2NmYmYxIj5BVG1lZ2EzMjhQIE1pY3JvY29udHJvbGxlcjwvdGV4dD4KCiAgPCEtLSBBcmR1aW5vIExlZnQgUGlucyAoUG93ZXIgJiBBbmFsb2cpIC0tPgogIDxjaXJjbGUgY3g9IjI2MCIgY3k9IjE2NSIgcj0iNCIgZmlsbD0iI2VmNDQ0NCIvPjx0ZXh0IHg9IjI3MiIgeT0iMTY5IiBjbGFzcz0idGV4dC1waW4iPjVWICBbUE9XRVJdPC90ZXh0PgogIDxjaXJjbGUgY3g9IjI2MCIgY3k9IjIwNSIgcj0iNCIgZmlsbD0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjI3MiIgeT0iMjA5IiBjbGFzcz0idGV4dC1waW4iPkdORCBbR1JPVU5EXTwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyNjAiIGN5PSIyNDUiIHI9IjQiIGZpbGw9IiNkYzI2MjYiLz48dGV4dCB4PSIyNzIiIHk9IjI0OSIgY2xhc3M9InRleHQtcGluIj5WSU4gW0JBVFRFUlkgSU5dPC90ZXh0PgogIDxjaXJjbGUgY3g9IjI2MCIgY3k9IjI5NSIgcj0iNCIgZmlsbD0iI2ZiOTIzYyIvPjx0ZXh0IHg9IjI3MiIgeT0iMjk5IiBjbGFzcz0idGV4dC1waW4iPkEwICBbTERSIExJR0hUXTwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyNjAiIGN5PSIzNDAiIHI9IjQiIGZpbGw9IiMzOGJkZjgiLz48dGV4dCB4PSIyNzIiIHk9IjM0NCIgY2xhc3M9InRleHQtcGluIj5BNCAgW1NEQSAvIEkyQ108L3RleHQ+CiAgPGNpcmNsZSBjeD0iMjYwIiBjeT0iMzc1IiByPSI0IiBmaWxsPSIjZWFiMzA4Ii8+PHRleHQgeD0iMjcyIiB5PSIzNzkiIGNsYXNzPSJ0ZXh0LXBpbiI+QTUgIFtTQ0wgLyBJMkNdPC90ZXh0PgoKICA8IS0tIEFyZHVpbm8gUmlnaHQgUGlucyAoRGlnaXRhbCkgLS0+CiAgPGNpcmNsZSBjeD0iNTMwIiBjeT0iMTgwIiByPSI0IiBmaWxsPSIjYzA4NGZjIi8+PHRleHQgeD0iNDQwIiB5PSIxODQiIGNsYXNzPSJ0ZXh0LXBpbiI+UElOIDIgW1RJTFRdPC90ZXh0PgogIDxjaXJjbGUgY3g9IjUzMCIgY3k9IjIzNSIgcj0iNCIgZmlsbD0iIzRhZGU4MCIvPjx0ZXh0IHg9IjQzMCIgeT0iMjM5IiBjbGFzcz0idGV4dC1waW4iPlBJTiA0IFtESFQxMV08L3RleHQ+CiAgPGNpcmNsZSBjeD0iNTMwIiBjeT0iMjk1IiByPSI0IiBmaWxsPSIjNjQ3NDhiIi8+PHRleHQgeD0iNDcwIiB5PSIyOTkiIGNsYXNzPSJ0ZXh0LXBpbiI+R05EPC90ZXh0PgogIDxjaXJjbGUgY3g9IjUzMCIgY3k9IjM0NSIgcj0iNCIgZmlsbD0iI2VmNDQ0NCIvPjx0ZXh0IHg9IjQ3NSIgeT0iMzQ5IiBjbGFzcz0idGV4dC1waW4iPjVWPC90ZXh0PgoKICA8IS0tID09PT09PT09PT09PT09PT09IFJJR0hUIENPTFVNTjogU0VOU09SUyA9PT09PT09PT09PT09PT09PSAtLT4KICA8IS0tIDEuIE1vdGlvbiBUaWx0IEJhbGwgU3dpdGNoIC0tPgogIDxyZWN0IHg9IjU4MCIgeT0iNjAiIHdpZHRoPSIyNzUiIGhlaWdodD0iMTA1IiBjbGFzcz0iYm94IHRpbHQtYm94Ii8+CiAgPHRleHQgeD0iNjIwIiB5PSI4NSIgY2xhc3M9InRleHQtaGVhZCIgZmlsbD0iI2U5ZDVmZiI+VElMVCBCQUxMIFNXSVRDSDwvdGV4dD4KICA8dGV4dCB4PSI2MjAiIHk9IjEwMyIgY2xhc3M9InRleHQtZGVzYyI+UGluIDIgJiM4MjI2OyBJTlBVVF9QVUxMVVAgKFplcm8gUmVzaXN0b3JzKTwvdGV4dD4KICA8dGV4dCB4PSI2MjAiIHk9IjExOCIgY2xhc3M9InRleHQtZGVzYyI+My1UaWVyIEVzY2FsYXRpb246ID8gLSZndDsgU3RlYW0gLSZndDsgU3VwZXIg8J+SojwvdGV4dD4KICA8dGV4dCB4PSI2MjAiIHk9IjEzMyIgY2xhc3M9InRleHQtZGVzYyI+VHJpcGxlLVRhcDogQ2Fyb3VzZWwgSFVEIFN3aXRjaGVyPC90ZXh0PgogIDxjaXJjbGUgY3g9IjU4MCIgY3k9Ijk1IiByPSIzLjUiIGZpbGw9IiNjMDg0ZmMiLz48dGV4dCB4PSI1OTAiIHk9Ijk5IiBjbGFzcz0idGV4dC1waW4iPlNJRzwvdGV4dD4KICA8Y2lyY2xlIGN4PSI1ODAiIGN5PSIxMzAiIHI9IjMuNSIgZmlsbD0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjU5MCIgeT0iMTM0IiBjbGFzcz0idGV4dC1waW4iPkdORDwvdGV4dD4KCiAgPCEtLSAyLiBESFQxMSBTZW5zb3IgLS0+CiAgPHJlY3QgeD0iNTgwIiB5PSIxODAiIHdpZHRoPSIyNzUiIGhlaWdodD0iMTA1IiBjbGFzcz0iYm94IGRodC1ib3giLz4KICA8dGV4dCB4PSI2MjAiIHk9IjIwNSIgY2xhc3M9InRleHQtaGVhZCIgZmlsbD0iI2JiZjdkMCI+REhUMTEgU0VOU09SPC90ZXh0PgogIDx0ZXh0IHg9IjYyMCIgeT0iMjIzIiBjbGFzcz0idGV4dC1kZXNjIj5QaW4gNCAmIzgyMjY7IERpZ2l0YWwgMS1XaXJlIFByb3RvY29sPC90ZXh0PgogIDx0ZXh0IHg9IjYyMCIgeT0iMjM4IiBjbGFzcz0idGV4dC1kZXNjIj5BbWJpZW50IFRlbXBlcmF0dXJlICjCsEMvwrBGKSAmYW1wOyBIdW1pZGl0eSAoJSk8L3RleHQ+CiAgPHRleHQgeD0iNjIwIiB5PSIyNTMiIGNsYXNzPSJ0ZXh0LWRlc2MiPlBvbGxzIGV2ZXJ5IDIuNXMgd2l0aCBub24tYmxvY2tpbmcgdGltZXI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNTgwIiBjeT0iMjA1IiByPSIzLjUiIGZpbGw9IiNlZjQ0NDQiLz48dGV4dCB4PSI1OTAiIHk9IjIwOSIgY2xhc3M9InRleHQtcGluIj5WQ0M8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNTgwIiBjeT0iMjM1IiByPSIzLjUiIGZpbGw9IiM0YWRlODAiLz48dGV4dCB4PSI1OTAiIHk9IjIzOSIgY2xhc3M9InRleHQtcGluIj5EQVRBPC90ZXh0PgogIDxjaXJjbGUgY3g9IjU4MCIgY3k9IjI2NSIgcj0iMy41IiBmaWxsPSIjNjQ3NDhiIi8+PHRleHQgeD0iNTkwIiB5PSIyNjkiIGNsYXNzPSJ0ZXh0LXBpbiI+R05EPC90ZXh0PgoKICA8IS0tIDMuIExEUiBMaWdodCBTZW5zb3IgLS0+CiAgPHJlY3QgeD0iNTgwIiB5PSIzMDAiIHdpZHRoPSIyNzUiIGhlaWdodD0iMTE1IiBjbGFzcz0iYm94IGxkci1ib3giLz4KICA8dGV4dCB4PSI2MjAiIHk9IjMyNSIgY2xhc3M9InRleHQtaGVhZCIgZmlsbD0iI2ZlZjA4YSI+TERSIExJR0hUIFNFTlNPUjwvdGV4dD4KICA8dGV4dCB4PSI2MjAiIHk9IjM0MyIgY2xhc3M9InRleHQtZGVzYyI+UGluIEEwICYjODIyNjsgQ2lyY2FkaWFuIEF1dG8tU2xlZXAgU3lzdGVtPC90ZXh0PgogIDx0ZXh0IHg9IjYyMCIgeT0iMzU4IiBjbGFzcz0idGV4dC1kZXNjIj5Wb2x0YWdlIGRpdmlkZXIgd2l0aCAxMGvOqSBwdWxsLWRvd24gcmVzaXN0b3I8L3RleHQ+CiAgPHRleHQgeD0iNjIwIiB5PSIzNzMiIGNsYXNzPSJ0ZXh0LWRlc2MiPlRocmVzaG9sZCAmbHQ7IDIwMCB0cmlnZ2VycyBkZWVwIHNsZWVwICd6WnonPC90ZXh0PgogIDxjaXJjbGUgY3g9IjU4MCIgY3k9IjMzMCIgcj0iMy41IiBmaWxsPSIjZmI5MjNjIi8+PHRleHQgeD0iNTkwIiB5PSIzMzQiIGNsYXNzPSJ0ZXh0LXBpbiI+U0lHIChBMCk8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNTgwIiBjeT0iMzY1IiByPSIzLjUiIGZpbGw9IiNlZjQ0NDQiLz48dGV4dCB4PSI1OTAiIHk9IjM2OSIgY2xhc3M9InRleHQtcGluIj41VjwvdGV4dD4KICA8Y2lyY2xlIGN4PSI1ODAiIGN5PSIzOTUiIHI9IjMuNSIgZmlsbD0iIzY0NzQ4YiIvPjx0ZXh0IHg9IjU5MCIgeT0iMzk5IiBjbGFzcz0idGV4dC1waW4iPkdORDwvdGV4dD4KCiAgPCEtLSA9PT09PT09PT09PT09PT09PSBXSVJJTkcgVFJBQ0VTID09PT09PT09PT09PT09PT09IC0tPgogIDwhLS0gOVYgQmF0dGVyeSB0byBWSU4gLyBHTkQgLS0+CiAgPHBhdGggZD0iTSAyMjAgMzUwIEwgMjQwIDM1MCBMIDI0MCAyNDUgTCAyNjAgMjQ1IiBjbGFzcz0id2lyZS1iYXQiLz4KICA8cGF0aCBkPSJNIDIyMCAzODUgTCAyNDUgMzg1IEwgMjQ1IDIwNSBMIDI2MCAyMDUiIGNsYXNzPSJ3aXJlLWduZCIvPgoKICA8IS0tIE9MRUQgSTJDIFNEQSAmIFNDTCAtLT4KICA8cGF0aCBkPSJNIDIyMCAxMzggTCAyNDAgMTM4IEwgMjQwIDM0MCBMIDI2MCAzNDAiIGNsYXNzPSJ3aXJlLXNkYSIvPgogIDxwYXRoIGQ9Ik0gMjIwIDExOCBMIDI0NSAxMTggTCAyNDUgMzc1IEwgMjYwIDM3NSIgY2xhc3M9IndpcmUtc2NsIi8+CgogIDwhLS0gT0xFRCA1ViAmIEdORCAtLT4KICA8cGF0aCBkPSJNIDIyMCA5OCBMIDI1MCA5OCBMIDI1MCAxNjUgTCAyNjAgMTY1IiBjbGFzcz0id2lyZS01diIvPgogIDxwYXRoIGQ9Ik0gMjIwIDc4IEwgMjU1IDc4IEwgMjU1IDIwNSBMIDI2MCAyMDUiIGNsYXNzPSJ3aXJlLWduZCIvPgoKICA8IS0tIERpZ2l0YWwgUGluIDIgKFRpbHQpIC0tPgogIDxwYXRoIGQ9Ik0gNTMwIDE4MCBMIDU1NSAxODAgTCA1NTUgOTUgTCA1ODAgOTUiIGNsYXNzPSJ3aXJlLWQyIi8+CiAgPCEtLSBUaWx0IEdORCAtLT4KICA8cGF0aCBkPSJNIDU4MCAxMzAgTCA1NjAgMTMwIEwgNTYwIDI5NSBMIDUzMCAyOTUiIGNsYXNzPSJ3aXJlLWduZCIvPgoKICA8IS0tIERpZ2l0YWwgUGluIDQgKERIVDExIERhdGEpIC0tPgogIDxwYXRoIGQ9Ik0gNTMwIDIzNSBMIDU4MCAyMzUiIGNsYXNzPSJ3aXJlLWQ0Ii8+CiAgPCEtLSBESFQxMSBWQ0MgJiBHTkQgLS0+CiAgPHBhdGggZD0iTSA1ODAgMjA1IEwgNTY1IDIwNSBMIDU2NSAzNDUgTCA1MzAgMzQ1IiBjbGFzcz0id2lyZS01diIvPgogIDxwYXRoIGQ9Ik0gNTgwIDI2NSBMIDU1MCAyNjUgTCA1NTAgMjk1IEwgNTMwIDI5NSIgY2xhc3M9IndpcmUtZ25kIi8+CgogIDwhLS0gTERSIFBpbiBBMCAoQW5hbG9nIFNpZ25hbCkgLS0+CiAgPHBhdGggZD0iTSAyNjAgMjk1IEwgMjUwIDI5NSBMIDI1MCA0MjUgTCA1NjAgNDI1IEwgNTYwIDMzMCBMIDU4MCAzMzAiIGNsYXNzPSJ3aXJlLWEwIi8+CiAgPCEtLSBMRFIgNVYgJiBHTkQgLS0+CiAgPHBhdGggZD0iTSA1ODAgMzY1IEwgNTcwIDM2NSBMIDU3MCAzNDUgTCA1MzAgMzQ1IiBjbGFzcz0id2lyZS01diIvPgogIDxwYXRoIGQ9Ik0gNTgwIDM5NSBMIDU1MCAzOTUgTCA1NTAgMjk1IEwgNTMwIDI5NSIgY2xhc3M9IndpcmUtZ25kIi8+CgogIDwhLS0gPT09PT09PT09PT09PT09PT0gQk9UVE9NIExFR0VORCA9PT09PT09PT09PT09PT09PSAtLT4KICA8cmVjdCB4PSIyNSIgeT0iNDM1IiB3aWR0aD0iODMwIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzFlMjkzYiIvPgogIDxjaXJjbGUgY3g9IjQ1IiBjeT0iNDUxIiByPSI1IiBmaWxsPSIjZWY0NDQ0Ii8+PHRleHQgeD0iNTYiIHk9IjQ1NSIgY2xhc3M9InRleHQtZGVzYyI+NVYgUG93ZXI8L3RleHQ+CiAgPGNpcmNsZSBjeD0iMTMwIiBjeT0iNDUxIiByPSI1IiBmaWxsPSIjNjQ3NDhiIi8+PHRleHQgeD0iMTQxIiB5PSI0NTUiIGNsYXNzPSJ0ZXh0LWRlc2MiPkdORCBDb21tb248L3RleHQ+CiAgPGNpcmNsZSBjeD0iMjMwIiBjeT0iNDUxIiByPSI1IiBmaWxsPSIjMzhiZGY4Ii8+PHRleHQgeD0iMjQxIiB5PSI0NTUiIGNsYXNzPSJ0ZXh0LWRlc2MiPlNEQSAoQTQpPC90ZXh0PgogIDxjaXJjbGUgY3g9IjMxNSIgY3k9IjQ1MSIgcj0iNSIgZmlsbD0iI2VhYjMwOCIvPjx0ZXh0IHg9IjMyNiIgeT0iNDU1IiBjbGFzcz0idGV4dC1kZXNjIj5TQ0wgKEE1KTwvdGV4dD4KICA8Y2lyY2xlIGN4PSI0MDAiIGN5PSI0NTEiIHI9IjUiIGZpbGw9IiNjMDg0ZmMiLz48dGV4dCB4PSI0MTEiIHk9IjQ1NSIgY2xhc3M9InRleHQtZGVzYyI+RDIgVGlsdCAoRXNjYWxhdGlvbik8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNTQwIiBjeT0iNDUxIiByPSI1IiBmaWxsPSIjNGFkZTgwIi8+PHRleHQgeD0iNTUxIiB5PSI0NTUiIGNsYXNzPSJ0ZXh0LWRlc2MiPkQ0IERIVDExIERhdGE8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjU1IiBjeT0iNDUxIiByPSI1IiBmaWxsPSIjZmI5MjNjIi8+PHRleHQgeD0iNjY2IiB5PSI0NTUiIGNsYXNzPSJ0ZXh0LWRlc2MiPkEwIExpZ2h0IFNlbnNvcjwvdGV4dD4KICA8bGluZSB4MT0iNzcwIiB5MT0iNDUxIiB4Mj0iNzk1IiB5Mj0iNDUxIiBjbGFzcz0id2lyZS1iYXQiLz48dGV4dCB4PSI4MDIiIHk9IjQ1NSIgY2xhc3M9InRleHQtZGVzYyI+OVYgVklOPC90ZXh0Pgo8L3N2Zz4K" alt="Circuit Design Diagram">
+      </div>
+    </div>
+
+    <!-- 2. PICTURE/S OF FINISHED PROJECT -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">2</span>
+        Picture/s of the Finished Project
+      </h2>
+      <p>Photographs of the physical Desk Buddy prototype showcasing the clear optical reflector prism, mini-breadboard layout, 9V battery compartment, creator splash screen, and active floating hologram displays (companion faces, 3-tier anger escalation, climate dashboard, digital clock, and daily quotes).</p>
+      <div class="img-box">
+<div class="img-placeholder">📸 [Finished Project Photo Placeholder]<br>Place photo at <code>assets/finished_project_1.jpg</code> to embed automatically.</div>
+
+      </div>
+    </div>
+
+    <!-- 3. LIST OF MATERIALS / COMPONENTS / WIRING CONFIG -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">3</span>
+        List of Materials / Components / Wiring Config
+      </h2>
+      
+      <h3 style="font-size:13.5px; color:#2d3748; margin: 12px 0 6px 0;">A. Bill of Materials</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 35%;">Component / Item</th>
+            <th style="width: 15%;">Quantity</th>
+            <th style="width: 50%;">Specification / Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Arduino UNO R3</strong></td>
+            <td>1 pc</td>
+            <td>MakerLAB Upgraded Starter Kit ATmega328P microcontroller board</td>
+          </tr>
+          <tr>
+            <td><strong>0.96&quot; Monochrome I2C OLED Display</strong></td>
+            <td>1 pc</td>
+            <td>128x64 pixels (SSD1306 driver) - 3D hologram projection source</td>
+          </tr>
+          <tr>
+            <td><strong>Tilt Ball Switch Module</strong></td>
+            <td>1 pc</td>
+            <td>Motion sensor on Pin 2 triggering interactive 3-tier progressive anger escalation (? -&gt; Steam -&gt; Super Angry 💢) and HUD menu navigation</td>
+          </tr>
+          <tr>
+            <td><strong>Photoresistor (LDR) &amp; 10kΩ Resistor</strong></td>
+            <td>1 set</td>
+            <td>Ambient light sensor on Pin A0 triggering circadian auto-sleep and wake</td>
+          </tr>
+          <tr>
+            <td><strong>DHT11 Temp &amp; Humidity Sensor</strong></td>
+            <td>1 pc</td>
+            <td>Digital temperature &amp; relative humidity sensor on Pin 4</td>
+          </tr>
+          <tr>
+            <td><strong>Extra-Small Mini Breadboard (170 Tie-Points)</strong></td>
+            <td>1 pc</td>
+            <td>Compact, portable, and aesthetic prototyping platform</td>
+          </tr>
+          <tr>
+            <td><strong>Clear Acrylic / Transparent Plastic Reflector</strong></td>
+            <td>1 pc</td>
+            <td>45-degree Pepper&#x27;s Ghost optical beam reflector sheet</td>
+          </tr>
+          <tr>
+            <td><strong>9V Battery Snap with 2.1mm DC Barrel Jack</strong></td>
+            <td>1 pc</td>
+            <td>Regulated portable power input to Arduino DC jack</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size:13.5px; color:#2d3748; margin: 14px 0 6px 0;">B. Wiring Configuration (I2C & Power)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 30%;">Module / Source Terminal</th>
+            <th style="width: 30%;">Arduino UNO Pin</th>
+            <th style="width: 40%;">Connection Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>OLED GND</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">GND</code></td>
+            <td>Common system ground</td>
+          </tr>
+          <tr>
+            <td><strong>OLED VCC</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">5V</code></td>
+            <td>5V power input from Arduino regulator</td>
+          </tr>
+          <tr>
+            <td><strong>OLED SCL</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">A5 (SCL)</code></td>
+            <td>I2C Clock line</td>
+          </tr>
+          <tr>
+            <td><strong>OLED SDA</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">A4 (SDA)</code></td>
+            <td>I2C Data line</td>
+          </tr>
+          <tr>
+            <td><strong>Tilt Switch</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">Pin 2 &amp; GND</code></td>
+            <td>Internal INPUT_PULLUP, zero external resistors</td>
+          </tr>
+          <tr>
+            <td><strong>LDR Light Sensor</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">Pin A0</code></td>
+            <td>Voltage divider between 5V, Pin A0, and 10kΩ to GND</td>
+          </tr>
+          <tr>
+            <td><strong>DHT11 Data</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">Pin 4</code></td>
+            <td>Digital temperature &amp; humidity signal (VCC to 5V, GND to GND)</td>
+          </tr>
+          <tr>
+            <td><strong>9V Battery</strong></td>
+            <td><code style="background:#edf2f7; padding:2px 5px; border-radius:3px;">DC Jack / VIN</code></td>
+            <td>Portable battery power supply with reverse-polarity protection</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. ESTIMATED COST OF COMPONENTS -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">4</span>
+        Estimated Cost of the Project Components Used
+      </h2>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 55%;">Component Item</th>
+            <th style="width: 25%;">Unit Cost</th>
+            <th style="width: 20%;">Total Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arduino UNO R3 (MakerLAB Kit)</td>
+            <td>$6.00 - $10.00</td>
+            <td><strong>$7.50</strong></td>
+          </tr>
+          <tr>
+            <td>0.96&quot; I2C OLED Display (SSD1306)</td>
+            <td>$2.50</td>
+            <td><strong>$2.50</strong></td>
+          </tr>
+          <tr>
+            <td>Tilt Ball Switch Sensor</td>
+            <td>$0.50</td>
+            <td><strong>$0.50</strong></td>
+          </tr>
+          <tr>
+            <td>Photoresistor (LDR) + 10k Resistor</td>
+            <td>$0.30</td>
+            <td><strong>$0.30</strong></td>
+          </tr>
+          <tr>
+            <td>DHT11 Sensor Module</td>
+            <td>$1.20</td>
+            <td><strong>$1.20</strong></td>
+          </tr>
+          <tr>
+            <td>Extra-Small Mini Breadboard &amp; Jumpers</td>
+            <td>$1.50</td>
+            <td><strong>$1.50</strong></td>
+          </tr>
+          <tr>
+            <td>Transparent Acrylic / Plastic Hologram Plate</td>
+            <td>$1.00</td>
+            <td><strong>$1.00</strong></td>
+          </tr>
+          <tr>
+            <td>9V Battery &amp; DC Barrel Snap</td>
+            <td>$2.00</td>
+            <td><strong>$2.00</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total-cost-banner">
+        💰 Overall Estimated Project Cost: $16.50 (Approx. ₱900 - ₱980)
+      </div>
+    </div>
+
+    <!-- 5. FULL WORKING CODE -->
+    <div class="section-card" style="page-break-inside: auto;">
+      <h2 class="section-title">
+        <span class="section-num">5</span>
+        Full Working Code
+      </h2>
+      <p style="font-size:12px; color:#4a5568; margin-bottom:8px;">
+        Firmware sketch targeting ATmega328P with SSD1306 OLED driver:
+      </p>
+      <pre class="code-container"><code>/*
+ * =====================================================================
+ *  DESK BUDDY v2.0 - XIAOZHI INTERACTIVE FACE ENGINE &amp; TRIPLE-TAP HUD
+ * =====================================================================
+ *  Microcontroller: Arduino UNO R3 (MakerLAB Upgraded Learning Kit v2)
+ *  Display:         0.96&quot; I2C Monochrome OLED (SSD1306, 128x64)
+ *  Optics:          45° Transparent Pepper&#x27;s Ghost Hologram Reflector
+ *  Sensors:         - Tilt Ball Switch (Pin 2: Tap Combo Escalation &amp; Triple-Tap)
+ *                   - Photoresistor LDR (Pin A0: Circadian Auto-Sleep)
+ *                   - DHT11 Sensor (Pin 4: Live Temp &amp; Humidity)
+ *  Form Factor:     Extra-Small Mini Breadboard (170 Tie-Points)
+ *  Power:           9V Battery / USB 5V
+ *
+ *  XIAOZHI FACE ENGINE FEATURES (Adapted for Arduino Uno SSD1306):
+ *    1. FLUID IDLE GAZE ENGINE: Liquid smooth Lerp gliding across the display!
+ *       The eyes actively inspect their surroundings (glance left -13px, glance
+ *       right +13px, look up curiously -7px, diagonal glances, and modest downward rest)
+ *       with organic hold durations (1.5-3.0s) and seamless return-to-center.
+ *    2. PROGRESSIVE SQUASH-AND-STRETCH BLINKING: Smooth frame-by-frame eyelid
+ *       interp curve with natural blinks coordinated during wide gaze transitions.
+ *    3. 3D PUPIL PARALLAX &amp; GLOSS: Black pupils lead the gaze with an adorable
+ *       white micro-reflection highlight dot for that glossy holographic shine.
+ *    4. CONNECTED 3D MOUTH PERSPECTIVE: The mouth smoothly tracks the gaze direction
+ *       with dampened parallax, making the entire face feel like a real turning head!
+ *    5. 3-TIER ANNOYANCE ESCALATION (Single Tap):
+ *       - Tier 1: Curious Question Mark (?) emote (starts 5s combo window)
+ *       - Tier 2 (tap within 5s): Little Angry Face (\ / glare + pout + steam)
+ *       - Tier 3 (tap within 5s): Super Angry Face (rage tremor, roaring mouth, throbbing 💢 vein)
+ *       - Auto calm-down: Returns to calm mode if untouched for 5 seconds!
+ *    6. CIRCADIAN AUTO-SLEEP: Turning room lights off gracefully droops
+ *       eyelids into deep sleep with floating 3D hologram &quot;zZz&quot;!
+ *    7. TRIPLE-TAP GESTURE NAVIGATION:
+ *       [Page 1: Pet Face] -&gt; [Page 2: All-in-One HUD] -&gt; [Page 3: Daily Quote]
+ *
+ *  REQUIRED LIBRARIES (Arduino Library Manager):
+ *    - Adafruit SSD1306
+ *    - Adafruit GFX Library
+ *    - Wire (built-in)
+ *
+ *  PIN ALLOCATIONS:
+ *    - OLED GND   -&gt; GND
+ *    - OLED VCC   -&gt; 5V
+ *    - OLED SCL   -&gt; A5 (or top SCL)
+ *    - OLED SDA   -&gt; A4 (or top SDA)
+ *    - TILT SW    -&gt; Pin 2 &amp; GND (Uses internal INPUT_PULLUP, 0 resistors!)
+ *    - LDR (A0)   -&gt; 5V -&gt; LDR -&gt; Pin A0 -&gt; 10k Resistor -&gt; GND
+ *    - DHT11 DATA -&gt; Pin 4 (VCC to 5V, GND to GND)
+ * =====================================================================
+ */
+
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_GFX.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+#include &lt;avr/pgmspace.h&gt;
+
+// Set to 1 if you ever need live USB Serial monitor debugging, 0 for production release (saves ~1.4 KB flash!)
+#define ENABLE_SERIAL_DEBUG 0
+
+// =====================================================================
+//  HARDWARE PIN DEFINITIONS
+// =====================================================================
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+#define SCREEN_ADDRESS 0x3C
+
+constexpr int PIN_TILT = 2;    // Tilt ball switch (to GND with INPUT_PULLUP)
+constexpr int PIN_DHT  = 4;    // DHT11 Temperature &amp; Humidity Data
+constexpr int PIN_LDR  = A0;   // Photoresistor analog voltage divider
+
+// =====================================================================
+//  OPTICAL HOLOGRAM CONFIGURATION
+// =====================================================================
+// 0 = Normal (Screen flat on base facing UP into 45° reflector)
+// 2 = 180° Inverted (Screen mounted on ceiling facing DOWN into reflector)
+#define SCREEN_ROTATION 0
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &amp;Wire, OLED_RESET);
+
+// =====================================================================
+//  LIGHT SENSOR (LDR) THRESHOLDS
+// =====================================================================
+const int LDR_DARK_THRESHOLD  = 160; // Below this = Dark room (Sleep)
+const int LDR_LIGHT_THRESHOLD = 240; // Above this = Lights On (Awake)
+bool isRoomDark = false;
+unsigned long awakeTemporaryUntil = 0; // Temporary wake on tap during dark
+
+// Smooth Sleep &amp; Wake State Machine
+enum SleepState {
+  SLEEP_AWAKE,          // Fully awake
+  SLEEP_FALLING_ASLEEP, // Cinematic gradual eyelid droop &amp; heavy tiredness
+  SLEEP_DEEP_ASLEEP,    // Peaceful closed eyes with floating &#x27;z&#x27; holograms
+  SLEEP_WAKING_UP       // Gentle flutter-open wake transition
+};
+
+SleepState currentSleepState = SLEEP_AWAKE;
+unsigned long sleepTransitionStartTime = 0;
+const unsigned long FALLING_ASLEEP_DURATION = 3200; // ms (yawn, double blink &amp; fluid crescent morph)
+const unsigned long WAKING_UP_DURATION      = 3000; // ms (fluid 3.0s cute cinematic wake-up with morphing cheerful bounce)
+
+// =====================================================================
+//  TILT SWITCH, TRIPLE-TAP &amp; ANNOYANCE COMBO ENGINE
+// =====================================================================
+int lastTiltState = HIGH;
+unsigned long lastTapRegisteredTime = 0;
+const unsigned long MIN_TAP_INTERVAL          = 80;   // Debounce contact chatter (ms)
+const unsigned long SINGLE_TAP_RESOLVE_WINDOW = 400;  // ms after first tap to resolve single tap vs triple tap
+const unsigned long TRIPLE_TAP_COOLDOWN       = 3000; // 3-second lockout after page switch (ms)
+unsigned long tapCooldownUntil = 0;
+
+int tapCount = 0;
+unsigned long firstTapTime = 0;
+
+// Annoyance / Anger Escalation System (Tap Combo within 5.0 seconds)
+int annoyanceLevel = 0;                  // 0: Calm, 1: Question &#x27;?&#x27;, 2: Little Angry, 3: Super Angry
+int previousAnnoyanceLevel = 0;          // Tracks previous level for smooth frame-by-frame interpolation
+unsigned long lastAnnoyanceTapTime = 0;  // Timestamp of the last single tap
+const unsigned long ANNOYANCE_COMBO_WINDOW  = 5000; // 5.0 seconds combo window
+unsigned long annoyanceAnimStartTime        = 0;    // Reaction playback start
+unsigned long tierTransitionStartTime       = 0;    // Timestamp when current tier began morphing
+const unsigned long TIER_TRANSITION_DURATION = 300;  // ms to interpolate smoothly into next tier
+bool isCoolingDown = false;              // True during calm-down transition
+unsigned long coolDownStartTime = 0;     // Timestamp when calm-down began
+const unsigned long COOLDOWN_DURATION = 400; // ms to smooth back to peaceful living face
+
+// =====================================================================
+//  XIAOZHI-STYLE FACE ENGINE (Saccades, Fluid Blinking, Animated Mouth)
+// =====================================================================
+const int BASE_EYE_H = 28;     // Standard eye height
+const int BASE_EYE_W = 19;     // Standard eye width (H * 0.65)
+const int EYE_RADIUS = 5;      // Smooth rounded corners
+const int LEFT_EYE_CX = 36;    // Left eye X center
+const int RIGHT_EYE_CX = 92;   // Right eye X center
+const int BASE_EYE_CY = 27;    // Perfectly centered Eye Y center line (64px OLED)
+
+// Fluid Eye Motion Engine (Smooth Gliding &amp; Expressive Idle Gaze)
+int currentEyeX = 0;
+int currentEyeY = 0;
+int targetEyeX  = 0;
+int targetEyeY  = 0;
+unsigned long nextGazeChangeTime = 0;
+
+// Fluid Progressive Blinking State Machine (Squash &amp; Stretch)
+int blinkPhase = 0;
+unsigned long lastBlinkPhaseChange = 0;
+unsigned long nextBlinkTriggerTime = 3000;
+int currentEyeHeight = BASE_EYE_H;
+
+// Dynamic Mouth Engine
+enum MouthMode {
+  MOUTH_IDLE,       // Resting cute horizontal smile bar
+  MOUTH_LISTENING,  // Asymmetric curious slit
+  MOUTH_SPEAKING,   // Animated talking/chattering pulse
+  MOUTH_OPEN_SMILE  // Happy open smile
+};
+
+MouthMode currentMouthMode = MOUTH_IDLE;
+int currentMouthHeight = 4;
+int targetMouthHeight  = 4;
+unsigned long lastMouthUpdateTime = 0;
+
+// Alternate Moods (Happy, Questioning &#x27;?&#x27;, Idea &#x27;!&#x27;, Wink, Heart Eyes, Curious)
+enum CompanionMood {
+  MOOD_NORMAL_LIVING, // Xiaozhi organic breathing, blinks &amp; mouth
+  MOOD_QUESTIONING,   // Puzzled head tilt, asymmetric squint &amp; floating &#x27;?&#x27; above head
+  MOOD_IDEA_SPARK,    // Aha! moment with floating &#x27;!&#x27; and sparkle rays
+  MOOD_CURIOUS_TILT,  // Inquisitive head tilt / asymmetric eyes
+  MOOD_WINK,          // Playful wink
+  MOOD_HEART_EYES,    // Love / heart eyes
+  MOOD_EXCITED_ARCHES // Cheerful joyful curves (^ ^)
+};
+
+CompanionMood currentMood = MOOD_NORMAL_LIVING;
+unsigned long lastMoodChange = 0;
+unsigned long moodDuration = 3500;
+
+int zDriftOffset = 0; // Floating &#x27;z&#x27; hologram animation offset
+
+// =====================================================================
+//  DHT11 TEMPERATURE &amp; HUMIDITY DRIVER (Direct Bit-Bang, Non-Blocking)
+// =====================================================================
+struct DHTData {
+  int temperatureC;
+  int humidity;
+  bool valid;
+};
+
+DHTData lastDHTReading = {25, 56, false};
+unsigned long lastDHTPollTime = 0;
+const unsigned long DHT_POLL_INTERVAL = 2000;
+
+bool readDHT11Raw(int &amp;tempC, int &amp;humidity) {
+  uint8_t data[5] = {0, 0, 0, 0, 0};
+
+  // Step 1: Send Start Signal
+  pinMode(PIN_DHT, OUTPUT);
+  digitalWrite(PIN_DHT, LOW);
+  delay(18); // 18ms LOW pulse
+  digitalWrite(PIN_DHT, HIGH);
+  delayMicroseconds(30);
+  pinMode(PIN_DHT, INPUT_PULLUP);
+
+  // Step 2: Await DHT11 response (80us LOW, 80us HIGH)
+  unsigned long timeout = micros();
+  while (digitalRead(PIN_DHT) == HIGH) {
+    if (micros() - timeout &gt; 100) return false;
+  }
+  timeout = micros();
+  while (digitalRead(PIN_DHT) == LOW) {
+    if (micros() - timeout &gt; 100) return false;
+  }
+  timeout = micros();
+  while (digitalRead(PIN_DHT) == HIGH) {
+    if (micros() - timeout &gt; 100) return false;
+  }
+
+  // Step 3: Read 40 bits
+  for (int i = 0; i &lt; 40; i++) {
+    timeout = micros();
+    while (digitalRead(PIN_DHT) == LOW) {
+      if (micros() - timeout &gt; 100) return false;
+    }
+
+    unsigned long pulseStart = micros();
+    timeout = micros();
+    while (digitalRead(PIN_DHT) == HIGH) {
+      if (micros() - timeout &gt; 100) return false;
+    }
+    unsigned long pulseLength = micros() - pulseStart;
+
+    int byteIdx = i / 8;
+    data[byteIdx] &lt;&lt;= 1;
+    if (pulseLength &gt; 40) {
+      data[byteIdx] |= 1;
+    }
+  }
+
+  // Step 4: Checksum Check
+  if (data[4] == ((data[0] + data[1] + data[2] + data[3]) &amp; 0xFF)) {
+    humidity = data[0];
+    tempC    = data[2];
+    return true;
+  }
+  return false;
+}
+
+void updateDHT11() {
+  unsigned long now = millis();
+  if (now - lastDHTPollTime &gt;= DHT_POLL_INTERVAL) {
+    lastDHTPollTime = now;
+    int t, h;
+    if (readDHT11Raw(t, h)) {
+      lastDHTReading.temperatureC = t;
+      lastDHTReading.humidity = h;
+      lastDHTReading.valid = true;
+    } else if (!lastDHTReading.valid) {
+      lastDHTReading.temperatureC = 25;
+      lastDHTReading.humidity = 58;
+    }
+  }
+}
+
+// =====================================================================
+//  REAL-TIME CLOCK (RTC) SYSTEM
+// =====================================================================
+int currentHours = 0;
+int currentMinutes = 0;
+int currentSeconds = 0;
+int currentDay = 12;
+int currentMonth = 10;
+int currentYear = 2026;
+unsigned long lastClockTick = 0;
+
+enum DayPeriod {
+  PERIOD_MORNING,   // 06:00 - 11:59
+  PERIOD_AFTERNOON, // 12:00 - 17:59
+  PERIOD_EVENING,   // 18:00 - 21:59
+  PERIOD_NIGHT      // 22:00 - 05:59
+};
+
+DayPeriod currentPeriod = PERIOD_MORNING;
+
+// =====================================================================
+//  ROTATING QUOTES (Stored in Flash PROGMEM to protect SRAM)
+// =====================================================================
+const char quote_0[] PROGMEM = &quot;Small steps every day lead to big results.&quot;;
+const char quote_1[] PROGMEM = &quot;Stay curious, keep tinkering, stay kind.&quot;;
+const char quote_2[] PROGMEM = &quot;Believe in yourself and build the future.&quot;;
+const char quote_3[] PROGMEM = &quot;Focus on the process, enjoy the build.&quot;;
+const char quote_4[] PROGMEM = &quot;Difficult circuits lead to brilliant gadgets.&quot;;
+const char quote_5[] PROGMEM = &quot;Great things never come from comfort zones.&quot;;
+const char quote_6[] PROGMEM = &quot;Your only limit is your imagination.&quot;;
+
+const char* const quotesTable[] PROGMEM = {
+  quote_0, quote_1, quote_2, quote_3, quote_4, quote_5, quote_6
+};
+const int totalQuotes = 7;
+int currentQuoteIndex = 0;
+
+// =====================================================================
+//  PAGE MODES (Controlled via Triple-Tap)
+// =====================================================================
+enum DisplayMode {
+  MODE_FACE_ANIMATION,  // Page 1: Xiaozhi Companion Face &amp; Anger Escalation
+  MODE_ALL_IN_ONE_HUD,  // Page 2: Combined Clock, Date, Temp &amp; Humidity
+  MODE_QUOTE_DISPLAY    // Page 3: Daily Wisdom Quote with Talking Mouth
+};
+
+DisplayMode currentMode = MODE_FACE_ANIMATION;
+
+// Function Prototypes
+void syncClockWithCompilerTime();
+void updateClock();
+void updateDayPeriod();
+void checkSensors();
+void updateXiaozhiFaceLogic();
+void renderCurrentMode();
+void renderSleepStateMachine();
+
+// Screen Renderers
+void renderXiaozhiFaceMode();
+void renderAllInOneHUD();
+void renderQuoteMode();
+
+// Graphics Helpers
+void drawXiaozhiEyes(int leftH, int rightH, int xShift, int yShift);
+void drawXiaozhiMouth(int xShift, int yShift, int w, int h, int radius);
+void drawHeartEyes(int xShift, int yShift);
+void drawQuestionMarkFace(int progress);
+void drawLittleAngryFace(int progress);
+void drawSuperAngryFace(int progress);
+void drawCoolDownFace(int progress, int fromLevel);
+void drawAnimeAngerVein(int x, int y, int size);
+void drawBillowingSteam(int x, int y, unsigned long animTime);
+void drawSleepyFace();
+void drawSleepingClosedFace();
+void drawMorphingSleepEyes(int curvature, int xShift, int yShift);
+void drawMorphingArchEyes(int archCurvature, int xShift, int yShift);
+void drawSequentialSleepZ(unsigned long deepSleepElapsed);
+
+// =====================================================================
+//  SETUP
+// =====================================================================
+void setup() {
+#if ENABLE_SERIAL_DEBUG
+  Serial.begin(9600);
+  Serial.println(F(&quot;========================================&quot;));
+  Serial.println(F(&quot;            DESK BUDDY v2.0             &quot;));
+  Serial.println(F(&quot; Created by Rairolf Rabang &amp; Nicole S.  &quot;));
+  Serial.println(F(&quot;========================================&quot;));
+#endif
+
+  pinMode(PIN_TILT, INPUT_PULLUP);
+  pinMode(PIN_DHT, INPUT_PULLUP);
+  pinMode(PIN_LDR, INPUT);
+
+  Wire.begin();
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+#if ENABLE_SERIAL_DEBUG
+    Serial.println(F(&quot;ERROR: SSD1306 not found! Check SDA (A4) &amp; SCL (A5).&quot;));
+#endif
+    for (;;);
+  }
+
+  display.setRotation(SCREEN_ROTATION);
+
+  syncClockWithCompilerTime();
+  updateDayPeriod();
+  updateDHT11();
+
+  // Boot Splash Screen - Creator Names
+  display.clearDisplay();
+  display.setTextColor(SSD1306_WHITE);
+  display.setTextSize(1);
+  display.setCursor(19, 4);
+  display.print(F(&quot;DESK BUDDY v2.0&quot;));
+  display.drawFastHLine(10, 15, 108, SSD1306_WHITE);
+  display.setCursor(31, 20);
+  display.print(F(&quot;Created by:&quot;));
+  display.setCursor(22, 31);
+  display.print(F(&quot;Rairolf Rabang&quot;));
+  display.setCursor(61, 42);
+  display.print(F(&quot;&amp;&quot;));
+  // Nicole Margareth Sibal in Flash PROGMEM (condensed 5px pitch, centered at x=9)
+  PGM_P nicolePtr = reinterpret_cast&lt;PGM_P&gt;(F(&quot;Nicole Margareth Sibal&quot;));
+  for (uint8_t i = 0; i &lt; 22; i++) {
+    char c = (char)pgm_read_byte(nicolePtr + i);
+    display.drawChar(9 + (i * 5), 53, c, SSD1306_WHITE, SSD1306_BLACK, 1);
+  }
+  display.display();
+  delay(2200);
+
+  lastClockTick = millis();
+  lastDHTPollTime = millis();
+  nextGazeChangeTime = millis() + 2000;
+  nextBlinkTriggerTime = millis() + 2500;
+}
+
+// =====================================================================
+//  MAIN LOOP
+// =====================================================================
+void loop() {
+  updateClock();
+  updateDHT11();
+  checkSensors();
+  updateXiaozhiFaceLogic();
+  renderCurrentMode();
+  delay(30); // 33 FPS smooth animation loop
+}
+
+// =====================================================================
+//  SENSOR &amp; TRIPLE-TAP PROCESSING
+// =====================================================================
+void checkSensors() {
+  unsigned long now = millis();
+
+  // --- 1. Photoresistor (LDR) Ambient Light Tracking ---
+  int ldrRaw = analogRead(PIN_LDR);
+  if (!isRoomDark &amp;&amp; ldrRaw &lt; LDR_DARK_THRESHOLD &amp;&amp; now &gt; awakeTemporaryUntil) {
+    isRoomDark = true;
+    if (currentSleepState == SLEEP_AWAKE) {
+      currentSleepState = SLEEP_FALLING_ASLEEP;
+      sleepTransitionStartTime = now;
+      targetEyeX = 0;
+      targetEyeY = 2; // Look slightly down as tiredness sets in
+    }
+#if ENABLE_SERIAL_DEBUG
+    Serial.print(F(&quot;[LDR] Lights turned off -&gt; Falling Asleep (ADC: &quot;));
+    Serial.print(ldrRaw);
+    Serial.println(F(&quot;)&quot;));
+#endif
+  } else if (isRoomDark &amp;&amp; ldrRaw &gt; LDR_LIGHT_THRESHOLD) {
+    isRoomDark = false;
+    if (currentSleepState == SLEEP_DEEP_ASLEEP || currentSleepState == SLEEP_FALLING_ASLEEP) {
+      currentSleepState = SLEEP_WAKING_UP;
+      sleepTransitionStartTime = now;
+    }
+#if ENABLE_SERIAL_DEBUG
+    Serial.print(F(&quot;[LDR] Lights turned on -&gt; Waking up! (ADC: &quot;));
+    Serial.print(ldrRaw);
+    Serial.println(F(&quot;)&quot;));
+#endif
+  }
+
+#if ENABLE_SERIAL_DEBUG
+  // Periodic Serial telemetry every 2 seconds for easy calibration
+  static unsigned long lastLDRPrint = 0;
+  if (now - lastLDRPrint &gt;= 2000) {
+    lastLDRPrint = now;
+    Serial.print(F(&quot;[LDR Telemetry] Live A0 = &quot;));
+    Serial.print(ldrRaw);
+    Serial.print(F(&quot; | Sleep State: &quot;));
+    if (currentSleepState == SLEEP_AWAKE) Serial.println(F(&quot;AWAKE&quot;));
+    else if (currentSleepState == SLEEP_FALLING_ASLEEP) Serial.println(F(&quot;DROWSY (FALLING ASLEEP)&quot;));
+    else if (currentSleepState == SLEEP_DEEP_ASLEEP) Serial.println(F(&quot;DEEP ASLEEP&quot;));
+    else Serial.println(F(&quot;WAKING UP&quot;));
+  }
+#endif
+
+  // --- 2. Tilt Ball Switch (Tap, Triple-Tap, and Anger Combo) ---
+  int tiltReading = digitalRead(PIN_TILT);
+
+  if (tiltReading != lastTiltState) {
+    // Process taps if not locked out by 3-second page switch cooldown
+    if (now &gt;= tapCooldownUntil) {
+      if ((now - lastTapRegisteredTime) &gt; MIN_TAP_INTERVAL) {
+        lastTapRegisteredTime = now;
+
+        // Wake buddy smoothly if tapped in dark
+        if (isRoomDark) {
+          isRoomDark = false;
+          awakeTemporaryUntil = now + 12000;
+          currentSleepState = SLEEP_WAKING_UP;
+          sleepTransitionStartTime = now;
+        }
+
+        if (tapCount == 0) {
+          tapCount = 1;
+          firstTapTime = now;
+        } else {
+          tapCount++;
+          if (tapCount &gt;= 3) {
+            // *** TRIPLE TAP: Advance Page! ***
+            tapCount = 0;
+            annoyanceLevel = 0; // Page switch cancels any anger!
+            previousAnnoyanceLevel = 0;
+            isCoolingDown = false;
+            currentMode = (DisplayMode)((currentMode + 1) % 3);
+
+            if (currentMode == MODE_QUOTE_DISPLAY) {
+              currentQuoteIndex = (currentQuoteIndex + 1) % totalQuotes;
+              currentMouthMode = MOUTH_SPEAKING; // Buddy talks while delivering quote!
+            } else {
+              currentMouthMode = MOUTH_IDLE;
+            }
+
+            tapCooldownUntil = now + TRIPLE_TAP_COOLDOWN; // 3-second lockout
+#if ENABLE_SERIAL_DEBUG
+            Serial.print(F(&quot;[TRIPLE TAP] Switched to Page: &quot;));
+            Serial.println((int)currentMode);
+#endif
+          }
+        }
+      }
+    }
+    lastTiltState = tiltReading;
+  }
+
+  // --- Single Tap Resolver (Waits 400ms to ensure it is not a triple tap) ---
+  if (tapCount &gt; 0 &amp;&amp; (now - firstTapTime &gt;= SINGLE_TAP_RESOLVE_WINDOW)) {
+    if (tapCount == 1 &amp;&amp; currentMode == MODE_FACE_ANIMATION &amp;&amp; currentSleepState == SLEEP_AWAKE) {
+      // Confirmed Deliberate Single Tap! Escalate Annoyance Tier:
+      isCoolingDown = false; // Cancel any active cool-down immediately
+      previousAnnoyanceLevel = annoyanceLevel;
+      if (annoyanceLevel == 0 || (now - lastAnnoyanceTapTime &gt; ANNOYANCE_COMBO_WINDOW)) {
+        annoyanceLevel = 1; // Tier 1: Question Mark &#x27;?&#x27;
+        previousAnnoyanceLevel = 0;
+      } else if (annoyanceLevel == 1) {
+        annoyanceLevel = 2; // Tier 2: Little Angry
+      } else {
+        annoyanceLevel = 3; // Tier 3: Super Angry (Rage Mode!)
+      }
+      lastAnnoyanceTapTime = now;
+      annoyanceAnimStartTime = now;
+      tierTransitionStartTime = now; // Mark beginning of smooth frame-by-frame morphing
+#if ENABLE_SERIAL_DEBUG
+      Serial.print(F(&quot;[TAP COMBO] Annoyance Tier: &quot;));
+      Serial.println(annoyanceLevel);
+#endif
+    }
+    tapCount = 0; // Clear tap counter after resolution
+  }
+
+  // --- 5-Second Calm-Down Rule with Smooth Morphing Transition ---
+  // If 5.0 seconds pass without another tap, Buddy initiates a smooth 400ms exhale/cool-down!
+  if (annoyanceLevel &gt; 0 &amp;&amp; !isCoolingDown &amp;&amp; (now - lastAnnoyanceTapTime &gt; ANNOYANCE_COMBO_WINDOW)) {
+    isCoolingDown = true;
+    coolDownStartTime = now;
+  }
+  if (isCoolingDown) {
+    if (now - coolDownStartTime &gt;= COOLDOWN_DURATION) {
+      annoyanceLevel = 0;
+      previousAnnoyanceLevel = 0;
+      isCoolingDown = false;
+      // Gentle relaxing blink as he returns to peaceful living mode
+      blinkPhase = 1;
+      lastBlinkPhaseChange = now;
+    }
+  }
+}
+
+// =====================================================================
+//  XIAOZHI FACE ENGINE LOGIC (Saccades, Blinking, Mouth Tweening)
+// =====================================================================
+void updateXiaozhiFaceLogic() {
+  unsigned long now = millis();
+
+  // --- 1. Fluid Gaze Motion &amp; Idle Look-Around Behavior ---
+  if (currentMode == MODE_FACE_ANIMATION &amp;&amp; annoyanceLevel == 0) {
+    if (now &gt;= nextGazeChangeTime) {
+      // If currently holding an off-center gaze, mostly return to center
+      if (abs(targetEyeX) &gt; 2 || abs(targetEyeY) &gt; 2) {
+        int roll = random(0, 100);
+        if (roll &lt; 75) {
+          // Return smoothly to center
+          targetEyeX = 0;
+          targetEyeY = 0;
+          nextGazeChangeTime = now + random(2000, 4500); // Stay center for 2-4.5s
+          // Natural blink when returning to center from a wide glance
+          if (blinkPhase == 0 &amp;&amp; random(0, 100) &lt; 60) {
+            blinkPhase = 1;
+            lastBlinkPhaseChange = now;
+          }
+        } else {
+          // Double glance: switch from left to right or right to left
+          if (targetEyeX &lt; 0) targetEyeX = 13;
+          else targetEyeX = -13;
+          targetEyeY = random(-2, 3);
+          nextGazeChangeTime = now + random(1400, 2400);
+        }
+      } else {
+        // From center, choose an expressive idle gaze direction
+        int roll = random(0, 100);
+        if (roll &lt; 28) {
+          // Glance Left (checking left side of desk)
+          targetEyeX = -13;
+          targetEyeY = random(-2, 3);
+          nextGazeChangeTime = now + random(1500, 3000);
+        } else if (roll &lt; 56) {
+          // Glance Right (checking right side of desk)
+          targetEyeX = 13;
+          targetEyeY = random(-2, 3);
+          nextGazeChangeTime = now + random(1500, 3000);
+        } else if (roll &lt; 72) {
+          // Look Up Thoughtfully / Inquisitive
+          targetEyeX = random(-3, 4);
+          targetEyeY = -7;
+          nextGazeChangeTime = now + random(1800, 3200);
+        } else if (roll &lt; 84) {
+          // Look Diagonal Up-Left or Up-Right
+          targetEyeX = (random(0, 2) == 0) ? -10 : 10;
+          targetEyeY = -5;
+          nextGazeChangeTime = now + random(1400, 2600);
+        } else if (roll &lt; 92) {
+          // Look Down / Modest Rest
+          targetEyeX = random(-3, 4);
+          targetEyeY = 5;
+          nextGazeChangeTime = now + random(1200, 2200);
+        } else {
+          // Gentle resting micro-drift
+          targetEyeX = random(-3, 4);
+          targetEyeY = random(-2, 3);
+          nextGazeChangeTime = now + random(2200, 4000);
+        }
+      }
+    }
+  } else if (annoyanceLevel == 1) {
+    targetEyeX = 4;
+    targetEyeY = -2; // Curious upward inquisitive gaze
+  } else {
+    targetEyeX = 0;
+    targetEyeY = 0;  // Glaring forward
+  }
+
+  // Smooth Glide towards target gaze
+  if (currentEyeX &lt; targetEyeX) currentEyeX++;
+  else if (currentEyeX &gt; targetEyeX) currentEyeX--;
+  if (currentEyeY &lt; targetEyeY) currentEyeY++;
+  else if (currentEyeY &gt; targetEyeY) currentEyeY--;
+
+  // --- 2. Fluid Progressive Squash-and-Stretch Blinking ---
+  if (blinkPhase == 0) {
+    if (now &gt;= nextBlinkTriggerTime) {
+      blinkPhase = 1; // Begin closing
+      lastBlinkPhaseChange = now;
+    }
+    currentEyeHeight = BASE_EYE_H;
+  } else {
+    unsigned long phaseElapsed = now - lastBlinkPhaseChange;
+    switch (blinkPhase) {
+      case 1: // Smooth squash down (50ms)
+        {
+          int bP = (int)(phaseElapsed * (BASE_EYE_H - 2) / 50);
+          currentEyeHeight = BASE_EYE_H - bP;
+          if (currentEyeHeight &lt; 2) currentEyeHeight = 2;
+          if (phaseElapsed &gt;= 50) {
+            blinkPhase = 2;
+            lastBlinkPhaseChange = now;
+            currentEyeHeight = 2;
+          }
+        }
+        break;
+      case 2: // Closed slit rest (40ms)
+        currentEyeHeight = 2;
+        if (phaseElapsed &gt;= 40) {
+          blinkPhase = 3;
+          lastBlinkPhaseChange = now;
+        }
+        break;
+      case 3: // Smooth stretch &amp; rebound open (60ms)
+        {
+          int bP = (int)(phaseElapsed * (BASE_EYE_H - 2) / 60);
+          currentEyeHeight = 2 + bP;
+          if (currentEyeHeight &gt; BASE_EYE_H) currentEyeHeight = BASE_EYE_H;
+          if (phaseElapsed &gt;= 60) {
+            blinkPhase = 0;
+            currentEyeHeight = BASE_EYE_H;
+            nextBlinkTriggerTime = now + random(2600, 5800); // Natural random blink interval
+          }
+        }
+        break;
+    }
+  }
+
+  // --- 3. Dynamic Mouth Tweening ---
+  if (currentMouthMode == MOUTH_SPEAKING) {
+    if (now - lastMouthUpdateTime &gt; 110) {
+      lastMouthUpdateTime = now;
+      int r = random(0, 100);
+      if (r &lt; 25) targetMouthHeight = 3;
+      else if (r &lt; 55) targetMouthHeight = 7;
+      else if (r &lt; 80) targetMouthHeight = 11;
+      else targetMouthHeight = 16;
+    }
+    // Smooth stepping towards target height
+    if (currentMouthHeight &lt; targetMouthHeight) currentMouthHeight += 2;
+    else if (currentMouthHeight &gt; targetMouthHeight) currentMouthHeight -= 2;
+  } else if (currentMouthMode == MOUTH_LISTENING) {
+    currentMouthHeight = 2;
+  } else if (currentMouthMode == MOUTH_OPEN_SMILE) {
+    currentMouthHeight = 8;
+  } else {
+    currentMouthHeight = 4; // Resting idle smile bar
+  }
+
+  // --- 4. Mood Cycling (While in Page 1) ---
+  if (currentMode == MODE_FACE_ANIMATION &amp;&amp; annoyanceLevel == 0 &amp;&amp; currentSleepState == SLEEP_AWAKE) {
+    if (now - lastMoodChange &gt;= moodDuration) {
+      lastMoodChange = now;
+      int roll = random(0, 100);
+      if (roll &lt; 30) {
+        currentMood = MOOD_NORMAL_LIVING;
+        currentMouthMode = MOUTH_IDLE;
+        moodDuration = random(3200, 5500);
+      } else if (roll &lt; 52) {
+        // Questioning / Puzzled with floating &#x27;?&#x27; emote!
+        currentMood = MOOD_QUESTIONING;
+        currentMouthMode = MOUTH_LISTENING;
+        targetEyeX = 5;
+        targetEyeY = -3; // Tilt head and gaze up inquisitively
+        moodDuration = random(2600, 4000);
+      } else if (roll &lt; 66) {
+        // Idea Spark with floating &#x27;!&#x27; emote!
+        currentMood = MOOD_IDEA_SPARK;
+        currentMouthMode = MOUTH_OPEN_SMILE;
+        targetEyeX = 0;
+        targetEyeY = -2;
+        moodDuration = random(2200, 3400);
+      } else if (roll &lt; 78) {
+        currentMood = MOOD_CURIOUS_TILT;
+        currentMouthMode = MOUTH_LISTENING;
+        moodDuration = random(2000, 3200);
+      } else if (roll &lt; 88) {
+        currentMood = MOOD_WINK;
+        currentMouthMode = MOUTH_IDLE;
+        moodDuration = 1400;
+      } else if (roll &lt; 95) {
+        currentMood = MOOD_EXCITED_ARCHES;
+        currentMouthMode = MOUTH_OPEN_SMILE;
+        moodDuration = 2200;
+      } else {
+        currentMood = MOOD_HEART_EYES;
+        currentMouthMode = MOUTH_OPEN_SMILE;
+        moodDuration = 2500;
+      }
+    }
+  }
+}
+
+// =====================================================================
+//  RENDER DISPATCHER
+// =====================================================================
+void renderCurrentMode() {
+  display.clearDisplay();
+
+  // Smooth sleep state machine takes priority over standard pages
+  if (currentSleepState != SLEEP_AWAKE) {
+    renderSleepStateMachine();
+    display.display();
+    return;
+  }
+
+  switch (currentMode) {
+    case MODE_FACE_ANIMATION:
+      renderXiaozhiFaceMode();
+      break;
+    case MODE_ALL_IN_ONE_HUD:
+      renderAllInOneHUD();
+      break;
+    case MODE_QUOTE_DISPLAY:
+      renderQuoteMode();
+      break;
+  }
+
+  display.display();
+}
+
+// =====================================================================
+//  SMOOTH SLEEP &amp; WAKE ENGINE (Yawn, Double Blink, Morph &amp; Sequential Z)
+// =====================================================================
+void renderSleepStateMachine() {
+  unsigned long now = millis();
+  unsigned long elapsed = now - sleepTransitionStartTime;
+
+  if (currentSleepState == SLEEP_FALLING_ASLEEP) {
+    if (elapsed &gt;= FALLING_ASLEEP_DURATION) {
+      currentSleepState = SLEEP_DEEP_ASLEEP;
+      drawSleepingClosedFace();
+      return;
+    }
+
+    // =========================================================
+    //  BEDTIME CINEMATIC ROUTINE (3.2 seconds total):
+    // =========================================================
+    if (elapsed &lt; 1000) {
+      // --- ACT 1: THE CUTE YAWN (0.0s - 1.0s) ---
+      drawXiaozhiEyes(BASE_EYE_H - 8, BASE_EYE_H - 8, 0, 0);
+      int mW, mH;
+      if (elapsed &lt; 450) {
+        mW = 12 + (6 * (int)elapsed) / 450;
+        mH = 4 + (10 * (int)elapsed) / 450;
+      } else if (elapsed &lt; 700) {
+        mW = 18; mH = 14;
+      } else {
+        mW = 18 - (6 * (int)(elapsed - 700)) / 300;
+        mH = 14 - (11 * (int)(elapsed - 700)) / 300;
+      }
+      drawXiaozhiMouth(0, 0, mW, mH, 5);
+    } 
+    else if (elapsed &lt; 1800) {
+      // --- ACT 2: DROWSY BLINK #1 (1.0s - 1.8s) ---
+      unsigned long bElapsed = elapsed - 1000;
+      int eyeH;
+      if (bElapsed &lt; 350) {
+        eyeH = BASE_EYE_H - (int)(bElapsed * (BASE_EYE_H - 2) / 350);
+      } else if (bElapsed &lt; 500) {
+        eyeH = 2;
+      } else {
+        eyeH = 2 + (int)((bElapsed - 500) * 10 / 300);
+      }
+      drawXiaozhiEyes(eyeH, eyeH, 0, 1);
+      drawXiaozhiMouth(0, 0, 14, 3, 2);
+    } 
+    else if (elapsed &lt; 2400) {
+      // --- ACT 3: SLEEPY BLINK #2 (1.8s - 2.4s) ---
+      unsigned long b2Elapsed = elapsed - 1800;
+      int eyeH = (b2Elapsed &lt; 400) ? (12 - (int)(b2Elapsed * 10 / 400)) : 2;
+      drawXiaozhiEyes(eyeH, eyeH, 0, 1);
+      drawXiaozhiMouth(0, 0, 12, 2, 2);
+    } 
+    else {
+      // --- ACT 4: CONTINUOUS CRESCENT MORPH (2.4s - 3.2s) ---
+      int morphP = (int)((elapsed - 2400) * 100 / 800);
+      if (morphP &gt; 100) morphP = 100;
+      drawMorphingSleepEyes(morphP, 0, 1);
+      drawXiaozhiMouth(0, 0, 12, 2, 2);
+    }
+  } 
+  else if (currentSleepState == SLEEP_DEEP_ASLEEP) {
+    // --- ACT 5: DEEP SLEEP &amp; SEQUENTIAL ONE-BY-ONE &#x27;z Z Z&#x27; (3.2s+) ---
+    drawMorphingSleepEyes(100, 0, 1);
+    drawXiaozhiMouth(0, 0, 12, 2, 2);
+    unsigned long deepSleepElapsed = elapsed - FALLING_ASLEEP_DURATION;
+    drawSequentialSleepZ(deepSleepElapsed);
+  } 
+  else if (currentSleepState == SLEEP_WAKING_UP) {
+    if (elapsed &gt;= WAKING_UP_DURATION) {
+      currentSleepState = SLEEP_AWAKE;
+      currentMood = MOOD_NORMAL_LIVING;
+      currentMouthMode = MOUTH_IDLE;
+      currentEyeHeight = BASE_EYE_H;
+      currentEyeX = 0;
+      currentEyeY = 0;
+      targetEyeX = 0;
+      targetEyeY = 0;
+      lastMoodChange = now;
+      moodDuration = random(4500, 6500); // 4.5s - 6.5s guaranteed calm living breathing room!
+      return;
+    }
+
+    // =========================================================
+    //  WAKE-UP CINEMATIC ROUTINE (3.0 seconds total):
+    // =========================================================
+    if (elapsed &lt; 600) {
+      // --- ACT 1: STIRRING &amp; CRESCENT UN-CURL (0.0s - 0.6s) ---
+      int unbend = 100 - (int)(elapsed * 100 / 600);
+      drawMorphingSleepEyes(unbend, 0, 1);
+      drawXiaozhiMouth(0, 0, 12, 2, 2);
+    } 
+    else if (elapsed &lt; 1400) {
+      // --- ACT 2: SLEEPY EYELID FLUTTER &amp; SIGH (0.6s - 1.4s) ---
+      unsigned long act2Elapsed = elapsed - 600;
+      int eyeH, mouthH;
+      if (act2Elapsed &lt; 400) {
+        eyeH = 2 + (int)(act2Elapsed * 10 / 400);
+        mouthH = 2 + (int)(act2Elapsed * 2 / 400);
+      } else {
+        eyeH = 12 - (int)((act2Elapsed - 400) * 8 / 400);
+        mouthH = 4 - (int)((act2Elapsed - 400) * 2 / 400);
+      }
+      drawXiaozhiEyes(eyeH, eyeH, 0, 1);
+      drawXiaozhiMouth(0, 0, 13, mouthH, 2);
+    } 
+    else if (elapsed &lt; 1950) {
+      // --- ACT 3: WIDE-EYE WAKE STRETCH &amp; MORNING SHINE (1.4s - 1.95s) ---
+      unsigned long act3Elapsed = elapsed - 1400;
+      int eyeH = (act3Elapsed &lt; 412) ? (4 + (int)(act3Elapsed * 26 / 412)) : (30 - (int)((act3Elapsed - 412) * 2 / 138));
+      int mouthH = 2 + (int)(act3Elapsed * 4 / 550);
+      int mouthW = 13 + (int)(act3Elapsed * 3 / 550);
+      drawXiaozhiEyes(eyeH, eyeH, 0, 0);
+      drawXiaozhiMouth(0, 0, mouthW, mouthH, 3);
+    } 
+    else if (elapsed &lt; 2250) {
+      // --- ACT 4A: FLUID SMILE SQUASH INTO CHEERFUL ARCH (1.95s - 2.25s) ---
+      unsigned long aElapsed = elapsed - 1950;
+      if (aElapsed &lt; 170) {
+        int eyeH = 28 - (int)(aElapsed * 25 / 170);
+        int mW = 16 + (int)(aElapsed * 2 / 170);
+        int mH = 6 + (int)(aElapsed * 2 / 170);
+        drawXiaozhiEyes(eyeH, eyeH, 0, 0);
+        drawXiaozhiMouth(0, 0, mW, mH, 4);
+      } else {
+        int pCurv = (int)((aElapsed - 170) * 100 / 80);
+        if (pCurv &gt; 100) pCurv = 100;
+        drawMorphingArchEyes(pCurv, 0, 0);
+        drawXiaozhiMouth(0, 0, 18, 8, 4);
+      }
+    }
+    else if (elapsed &lt; 2650) {
+      // --- ACT 4B: JOYFUL GIGGLE &amp; MORNING BOUNCE (2.25s - 2.65s) ---
+      unsigned long bElapsed = elapsed - 2250;
+      long bCycle = (long)(bElapsed % 200);
+      int bounceY = (int)((8L * bCycle * (200L - bCycle)) / 10000L);
+      drawMorphingArchEyes(100, 0, -bounceY);
+      drawXiaozhiMouth(0, -bounceY, 18, 8, 4);
+    }
+    else {
+      // --- ACT 4C: FLUID MORPH-OUT BACK TO AWAKE GAZE (2.65s - 3.0s) ---
+      unsigned long outElapsed = elapsed - 2650;
+      if (outElapsed &lt; 120) {
+        int unArch = 100 - (int)(outElapsed * 100 / 120);
+        drawMorphingArchEyes(unArch, 0, 0);
+        drawXiaozhiMouth(0, 0, 18, 7, 4);
+      } else {
+        int pBloom = (int)(outElapsed - 120);
+        int eyeH = 3 + pBloom * 25 / 230;
+        int mW = 18 - pBloom * 2 / 230;
+        int mH = 7 - pBloom * 4 / 230;
+        drawXiaozhiEyes(eyeH, eyeH, 0, 0);
+        drawXiaozhiMouth(0, 0, mW, mH, 3);
+      }
+    }
+  }
+}
+
+// =====================================================================
+//  PAGE 1: XIAOZHI COMPANION FACE (Dynamic Eyes + Mouth)
+// =====================================================================
+void renderXiaozhiFaceMode() {
+  unsigned long now = millis();
+
+  // --- Smooth Cool-Down Transition (Returning back to peaceful living face) ---
+  if (isCoolingDown) {
+    unsigned long cElapsed = now - coolDownStartTime;
+    int cProgress = 100;
+    if (cElapsed &lt; COOLDOWN_DURATION) {
+      cProgress = (int)((cElapsed * 100) / COOLDOWN_DURATION);
+    }
+    drawCoolDownFace(cProgress, annoyanceLevel);
+    return;
+  }
+
+  // --- Annoyance / Anger Escalation System (Tap Combo) ---
+  if (annoyanceLevel &gt; 0) {
+    unsigned long tElapsed = now - tierTransitionStartTime;
+    int progress = 100;
+    if (tElapsed &lt; TIER_TRANSITION_DURATION) {
+      progress = (int)((tElapsed * 100) / TIER_TRANSITION_DURATION);
+    }
+
+    if (annoyanceLevel == 1) {
+      // Tier 1: Question Mark &#x27;?&#x27; Emote with Smooth Pop-in &amp; Floating Bounce
+      drawQuestionMarkFace(progress);
+      return;
+    } else if (annoyanceLevel == 2) {
+      // Tier 2: Little Angry Face (Living Slanted Glare \ / + Annoyed Pout + Billowing Steam)
+      drawLittleAngryFace(progress);
+      return;
+    } else if (annoyanceLevel &gt;= 3) {
+      // Tier 3: Super Angry Face (Anime Rage Tremble + Roaring Mouth + Throbbing 💢 Vein)
+      drawSuperAngryFace(progress);
+      return;
+    }
+  }
+
+  // Note: Sleep is controlled by room lighting (Photoresistor LDR).
+  // If your room lights are on, Desk Buddy stays awake as your late-night companion!
+
+  // Render Based on Companion Mood (Pure Full-Screen Face, No Cluttering Text)
+  int effX = (int)currentEyeX;
+  int effY = (int)currentEyeY;
+
+  unsigned long mElapsed = millis() - lastMoodChange;
+  unsigned long mRemaining = (moodDuration &gt; mElapsed) ? (moodDuration - mElapsed) : 0;
+
+  // Smooth Envelope for Moods (220ms intro, 220ms outro)
+  int easeWeight = 100;
+  if (mElapsed &lt; 220) {
+    easeWeight = (int)(mElapsed * 100 / 220);
+  } else if (mRemaining &lt; 220) {
+    easeWeight = (int)(mRemaining * 100 / 220);
+  }
+
+  switch (currentMood) {
+    case MOOD_NORMAL_LIVING:
+      drawXiaozhiEyes(currentEyeHeight, currentEyeHeight, effX, effY);
+      drawXiaozhiMouth(effX * 3 / 5, effY * 3 / 5, 18, currentMouthHeight, 3);
+      break;
+
+    case MOOD_QUESTIONING:
+      {
+        // Smoothly squints right eye (28px -&gt; 18px -&gt; 28px)
+        int rightH = BASE_EYE_H - (easeWeight * 10 / 100);
+        drawXiaozhiEyes(BASE_EYE_H, rightH, effX, effY);
+
+        // Cocked inquisitive smirk smoothly interpolates
+        int mW = 18 - (easeWeight * 6 / 100);
+        int mXOff = -(easeWeight * 4 / 100);
+        drawXiaozhiMouth(effX * 3 / 5 + mXOff, effY * 3 / 5, mW, 3, 2);
+
+        // Animated floating Question Mark &#x27;?&#x27;
+        int hoverBob = (millis() / 170) % 3; // Gentle 2px hover bob
+        int baseY = 2 + hoverBob;
+        int qY;
+        if (mElapsed &lt; 220) {
+          qY = baseY + (int)((220 - mElapsed) * 14 / 220);
+        } else if (mRemaining &lt; 220) {
+          qY = baseY - (int)((220 - mRemaining) * 18 / 220);
+        } else {
+          qY = baseY;
+        }
+
+        if (qY &gt; -14 &amp;&amp; qY &lt; 40) {
+          display.setTextSize(2);
+          display.setCursor(104, qY);
+          display.print(F(&quot;?&quot;));
+        }
+      }
+      break;
+
+    case MOOD_IDEA_SPARK:
+      {
+        drawXiaozhiEyes(BASE_EYE_H, BASE_EYE_H, effX, effY);
+
+        // Open cheerful smile smoothly blooms open and relaxes
+        int mW = 18 - (easeWeight * 2 / 100);
+        int mH = currentMouthHeight + (easeWeight * 3 / 100);
+        drawXiaozhiMouth(effX * 3 / 5, effY * 3 / 5 - (easeWeight * 2 / 100), mW, mH, 3);
+
+        // Animated floating &#x27;!&#x27; with sparkle rays
+        int hoverBob = (millis() / 170) % 2;
+        int baseY = 2 + hoverBob;
+        int sparkY;
+        int disperse = 0;
+        if (mElapsed &lt; 220) {
+          sparkY = baseY + (int)((220 - mElapsed) * 14 / 220);
+        } else if (mRemaining &lt; 220) {
+          sparkY = baseY - (int)((220 - mRemaining) * 18 / 220);
+          disperse = (int)((220 - mRemaining) * 6 / 220);
+        } else {
+          sparkY = baseY;
+        }
+
+        if (sparkY &gt; -14 &amp;&amp; sparkY &lt; 40) {
+          display.setTextSize(2);
+          display.setCursor(106, sparkY);
+          display.print(F(&quot;!&quot;));
+
+          // Sparkles disperse outward on exit
+          display.drawPixel(100 - disperse, sparkY + 2, SSD1306_WHITE);
+          display.drawPixel(118 + disperse, sparkY + 2, SSD1306_WHITE);
+          display.drawPixel(119 + disperse, sparkY + 1, SSD1306_WHITE);
+        }
+      }
+      break;
+
+    case MOOD_CURIOUS_TILT:
+      {
+        int leftH = BASE_EYE_H - (easeWeight * 5 / 100);
+        drawXiaozhiEyes(leftH, BASE_EYE_H, effX, effY);
+        int mW = 18 - (easeWeight * 6 / 100);
+        int mXOff = -(easeWeight * 4 / 100);
+        drawXiaozhiMouth(effX * 3 / 5 + mXOff, effY * 3 / 5, mW, 3, 2);
+      }
+      break;
+
+    case MOOD_WINK:
+      {
+        // Left eye open
+        display.fillRoundRect(LEFT_EYE_CX - BASE_EYE_W/2 + effX, BASE_EYE_CY - BASE_EYE_H/2 + effY, BASE_EYE_W, BASE_EYE_H, EYE_RADIUS, SSD1306_WHITE);
+        display.fillCircle(LEFT_EYE_CX - 3 + effX, BASE_EYE_CY - 4 + effY, 3, SSD1306_BLACK);
+        display.drawPixel(LEFT_EYE_CX - 2 + effX, BASE_EYE_CY - 5 + effY, SSD1306_WHITE);
+
+        // Right eye smooth wink transition
+        if (mElapsed &lt; 120) {
+          int rH = BASE_EYE_H - (int)(mElapsed * (BASE_EYE_H - 2) / 120);
+          int rad = (rH / 2 &lt; EYE_RADIUS) ? (rH / 2) : EYE_RADIUS;
+          display.fillRoundRect(RIGHT_EYE_CX - BASE_EYE_W/2 + effX, BASE_EYE_CY - rH/2 + effY, BASE_EYE_W, rH, rad, SSD1306_WHITE);
+        } else if (mRemaining &lt; 120) {
+          int rH = 2 + (int)((120 - mRemaining) * (BASE_EYE_H - 2) / 120);
+          int rad = (rH / 2 &lt; EYE_RADIUS) ? (rH / 2) : EYE_RADIUS;
+          display.fillRoundRect(RIGHT_EYE_CX - BASE_EYE_W/2 + effX, BASE_EYE_CY - rH/2 + effY, BASE_EYE_W, rH, rad, SSD1306_WHITE);
+        } else {
+          // Wink arc lines
+          display.drawLine(RIGHT_EYE_CX - 12 + effX, BASE_EYE_CY + 4 + effY, RIGHT_EYE_CX + effX, BASE_EYE_CY - 4 + effY, SSD1306_WHITE);
+          display.drawLine(RIGHT_EYE_CX + effX, BASE_EYE_CY - 4 + effY, RIGHT_EYE_CX + 12 + effX, BASE_EYE_CY + 4 + effY, SSD1306_WHITE);
+          display.drawLine(RIGHT_EYE_CX - 12 + effX, BASE_EYE_CY + 5 + effY, RIGHT_EYE_CX + effX, BASE_EYE_CY - 3 + effY, SSD1306_WHITE);
+          display.drawLine(RIGHT_EYE_CX + effX, BASE_EYE_CY - 3 + effY, RIGHT_EYE_CX + 12 + effX, BASE_EYE_CY + 5 + effY, SSD1306_WHITE);
+        }
+        drawXiaozhiMouth(effX * 3 / 5, effY * 3 / 5, 16, 4, 3);
+      }
+      break;
+
+    case MOOD_HEART_EYES:
+      {
+        if (mElapsed &lt; 130) {
+          int eyeH = BASE_EYE_H - (int)(mElapsed * (BASE_EYE_H - 4) / 130);
+          drawXiaozhiEyes(eyeH, eyeH, effX, effY);
+        } else if (mRemaining &lt; 130) {
+          int eyeH = 4 + (int)((130 - mRemaining) * (BASE_EYE_H - 4) / 130);
+          drawXiaozhiEyes(eyeH, eyeH, effX, effY);
+        } else {
+          drawHeartEyes(effX, effY);
+        }
+        int mW = 16 + (easeWeight * 2 / 100);
+        int mH = 4 + (easeWeight * 4 / 100);
+        drawXiaozhiMouth(effX * 3 / 5, effY * 3 / 5, mW, mH, 4);
+      }
+      break;
+
+    case MOOD_EXCITED_ARCHES:
+      {
+        if (mElapsed &lt; 120) {
+          int eyeH = BASE_EYE_H - (int)(mElapsed * (BASE_EYE_H - 3) / 120);
+          drawXiaozhiEyes(eyeH, eyeH, effX, effY);
+        } else if (mElapsed &lt; 200) {
+          int p = (int)((mElapsed - 120) * 100 / 80);
+          drawMorphingArchEyes(p, effX, effY);
+        } else if (mRemaining &lt; 120) {
+          int eyeH = 3 + (int)((120 - mRemaining) * (BASE_EYE_H - 3) / 120);
+          drawXiaozhiEyes(eyeH, eyeH, effX, effY);
+        } else if (mRemaining &lt; 200) {
+          int p = (int)((mRemaining - 120) * 100 / 80);
+          drawMorphingArchEyes(p, effX, effY);
+        } else {
+          int bobY = ((millis() / 180) % 2 == 0) ? -1 : 0;
+          drawMorphingArchEyes(100, effX, effY + bobY);
+        }
+        int mW = 18 + (easeWeight * 2 / 100);
+        int mH = 4 + (easeWeight * 5 / 100);
+        drawXiaozhiMouth(effX * 3 / 5, effY * 3 / 5, mW, mH, 4);
+      }
+      break;
+  }
+}
+
+// ---------------------------------------------------------------------
+//  XIAOZHI GRAPHICS PRIMITIVES
+// ---------------------------------------------------------------------
+void drawXiaozhiEyes(int leftH, int rightH, int xShift, int yShift) {
+  int cy = BASE_EYE_CY + yShift;
+
+  // Left Eye Capsule
+  int leftTopY = cy - leftH / 2;
+  display.fillRoundRect(LEFT_EYE_CX - BASE_EYE_W/2 + xShift, leftTopY, BASE_EYE_W, leftH, EYE_RADIUS, SSD1306_WHITE);
+
+  // Right Eye Capsule
+  int rightTopY = cy - rightH / 2;
+  display.fillRoundRect(RIGHT_EYE_CX - BASE_EYE_W/2 + xShift, rightTopY, BASE_EYE_W, rightH, EYE_RADIUS, SSD1306_WHITE);
+
+  // Sparkle Pupils with parallax anticipation (Only visible when eyes are well open)
+  if (leftH &gt; 12) {
+    int pupilOffX = (xShift * 2) / 7; // Subtly leads the gaze inside the eye
+    int pupilOffY = (yShift * 2) / 7;
+    display.fillCircle(LEFT_EYE_CX - 3 + xShift + pupilOffX, cy - 4 + pupilOffY, 3, SSD1306_BLACK);
+    display.drawPixel(LEFT_EYE_CX - 2 + xShift + pupilOffX, cy - 5 + pupilOffY, SSD1306_WHITE);
+  }
+  if (rightH &gt; 12) {
+    int pupilOffX = (xShift * 2) / 7;
+    int pupilOffY = (yShift * 2) / 7;
+    display.fillCircle(RIGHT_EYE_CX - 3 + xShift + pupilOffX, cy - 4 + pupilOffY, 3, SSD1306_BLACK);
+    display.drawPixel(RIGHT_EYE_CX - 2 + xShift + pupilOffX, cy - 5 + pupilOffY, SSD1306_WHITE);
+  }
+}
+
+void drawXiaozhiMouth(int xShift, int yShift, int w, int h, int radius) {
+  int mx = 64 - w / 2 + xShift;
+  int my = 48 + yShift;
+  display.fillRoundRect(mx, my, w, h, radius, SSD1306_WHITE);
+}
+
+void drawHeartEyes(int xShift, int yShift) {
+  int centers[2] = {LEFT_EYE_CX + xShift, RIGHT_EYE_CX + xShift};
+  int cy = BASE_EYE_CY - 2 + yShift;
+  for (int i = 0; i &lt; 2; i++) {
+    int cx = centers[i];
+    display.fillCircle(cx - 5, cy - 3, 6, SSD1306_WHITE);
+    display.fillCircle(cx + 5, cy - 3, 6, SSD1306_WHITE);
+    display.fillTriangle(cx - 11, cy, cx + 11, cy, cx, cy + 12, SSD1306_WHITE);
+  }
+}
+
+void drawExcitedArches(int xShift, int yShift) {
+  int cy = BASE_EYE_CY + yShift;
+  for (int i = 0; i &lt; 4; i++) {
+    display.drawCircle(LEFT_EYE_CX + xShift, cy + 6 + i, 15, SSD1306_WHITE);
+    display.drawCircle(RIGHT_EYE_CX + xShift, cy + 6 + i, 15, SSD1306_WHITE);
+  }
+  display.fillRect(0, cy + 8, SCREEN_WIDTH, 26, SSD1306_BLACK);
+}
+
+// =====================================================================
+//  ANNOYANCE &amp; ANGER EXPRESSIONS (Tier 2 Little Angry, Tier 3 Super Angry)
+// =====================================================================
+void drawAnimeAngerVein(int x, int y, int size) {
+  int s = (size &gt; 0) ? 5 : 4;
+  // Two vertical lines
+  display.drawLine(x - 2, y - s, x - 2, y + s, SSD1306_WHITE);
+  display.drawLine(x + 2, y - s, x + 2, y + s, SSD1306_WHITE);
+  // Two horizontal lines
+  display.drawLine(x - s, y - 2, x + s, y - 2, SSD1306_WHITE);
+  display.drawLine(x - s, y + 2, x + s, y + 2, SSD1306_WHITE);
+  // Outer corner hooks (the 4 prongs of the anger cross mark 💢)
+  display.drawPixel(x - 3, y - s - 1, SSD1306_WHITE);
+  display.drawPixel(x + 3, y - s - 1, SSD1306_WHITE);
+  display.drawPixel(x - 3, y + s + 1, SSD1306_WHITE);
+  display.drawPixel(x + 3, y + s + 1, SSD1306_WHITE);
+  display.drawPixel(x - s - 1, y - 3, SSD1306_WHITE);
+  display.drawPixel(x - s - 1, y + 3, SSD1306_WHITE);
+  display.drawPixel(x + s + 1, y - 3, SSD1306_WHITE);
+  display.drawPixel(x + s + 1, y + 3, SSD1306_WHITE);
+}
+
+void drawPoutMouth(int midY) {
+  display.drawLine(58, 48, 64, midY, SSD1306_WHITE);
+  display.drawLine(64, midY, 70, 48, SSD1306_WHITE);
+  display.drawLine(58, 49, 64, midY + 1, SSD1306_WHITE);
+  display.drawLine(64, midY + 1, 70, 49, SSD1306_WHITE);
+}
+
+void drawSlantedEyebrows(int browCut, int xOff, int yOff) {
+  if (browCut &lt;= 0) return;
+  display.fillTriangle(LEFT_EYE_CX - 6 + xOff, BASE_EYE_CY - 14 + yOff, LEFT_EYE_CX + 11 + xOff, BASE_EYE_CY - 14 + yOff, LEFT_EYE_CX + 11 + xOff, BASE_EYE_CY - 14 + browCut + yOff, SSD1306_BLACK);
+  display.fillTriangle(RIGHT_EYE_CX - 11 + xOff, BASE_EYE_CY - 14 + yOff, RIGHT_EYE_CX + 6 + xOff, BASE_EYE_CY - 14 + yOff, RIGHT_EYE_CX - 11 + xOff, BASE_EYE_CY - 14 + browCut + yOff, SSD1306_BLACK);
+}
+
+void drawBillowingSteam(int x, int y, unsigned long animTime) {
+  display.drawPixel(x, y, SSD1306_WHITE);
+  display.drawPixel(x - 1, y, SSD1306_WHITE);
+  for (uint8_t i = 0; i &lt; 2; i++) {
+    uint16_t c = (animTime + i * 500) % 1000;
+    int px = x + 3 + (int)((c * 13) / 1000);
+    int py = y - 1 - (int)((c * 9) / 1000);
+    if (c &lt; 350) {
+      display.drawPixel(px, py, SSD1306_WHITE);
+    } else if (c &lt; 700) {
+      display.drawCircle(px, py, 2, SSD1306_WHITE);
+    } else {
+      display.drawCircle(px, py, 3, SSD1306_WHITE);
+    }
+  }
+}
+
+void drawQuestionMarkFace(int progress) {
+  int curX = (4 * progress) / 100;
+  int curY = (-2 * progress) / 100;
+  drawXiaozhiEyes(currentEyeHeight, currentEyeHeight, curX, curY);
+  drawXiaozhiMouth(curX / 2, curY / 2, 14, 3, 2);
+
+  int floatY = (progress &lt; 100) ? (22 - (14 * progress) / 100) : (8 + ((millis() / 200) % 4));
+  display.setTextSize(2);
+  display.setCursor(110, floatY);
+  display.print(F(&quot;?&quot;));
+}
+
+void drawLittleAngryFace(int progress) {
+  unsigned long angerTime = millis() - annoyanceAnimStartTime;
+  int huff = ((angerTime % 900) &lt; 400) ? 1 : 0;
+  int browCut = (14 * progress) / 100;
+  int midY = 49 - (4 * progress) / 100;
+
+  display.fillRoundRect(LEFT_EYE_CX - 10, BASE_EYE_CY - 13, 20, 26 + huff, 4, SSD1306_WHITE);
+  display.fillRoundRect(RIGHT_EYE_CX - 10, BASE_EYE_CY - 13, 20, 26 + huff, 4, SSD1306_WHITE);
+  drawSlantedEyebrows(browCut, 0, 0);
+
+  int pupY = BASE_EYE_CY + 4 + huff;
+  display.fillCircle(LEFT_EYE_CX + 1, pupY, 3, SSD1306_BLACK);
+  display.fillCircle(RIGHT_EYE_CX - 1, pupY, 3, SSD1306_BLACK);
+  display.drawPixel(LEFT_EYE_CX, pupY - 1, SSD1306_WHITE);
+  display.drawPixel(RIGHT_EYE_CX - 2, pupY - 1, SSD1306_WHITE);
+
+  drawPoutMouth(midY);
+
+  if (progress &gt;= 40) {
+    drawBillowingSteam(105, 43, angerTime);
+  }
+}
+
+void drawSuperAngryFace(int progress) {
+  unsigned long now = millis();
+  int jAmp = (progress &gt;= 60) ? 2 : 1;
+  int jX = random(-jAmp, jAmp + 1);
+  int jY = random(-jAmp, jAmp + 1);
+  int browCut = 14 + (3 * progress) / 100;
+
+  display.fillRoundRect(LEFT_EYE_CX - 11 + jX, BASE_EYE_CY - 13 + jY, 22, 26, 4, SSD1306_WHITE);
+  display.fillRoundRect(RIGHT_EYE_CX - 11 + jX, BASE_EYE_CY - 13 + jY, 22, 26, 4, SSD1306_WHITE);
+  drawSlantedEyebrows(browCut, jX, jY);
+
+  display.drawLine(LEFT_EYE_CX - 12 + jX, BASE_EYE_CY - 13 + jY, LEFT_EYE_CX + 12 + jX, BASE_EYE_CY + 4 + jY, SSD1306_WHITE);
+  display.drawLine(LEFT_EYE_CX - 12 + jX, BASE_EYE_CY - 14 + jY, LEFT_EYE_CX + 12 + jX, BASE_EYE_CY + 3 + jY, SSD1306_WHITE);
+  display.drawLine(RIGHT_EYE_CX - 12 + jX, BASE_EYE_CY + 4 + jY, RIGHT_EYE_CX + 12 + jX, BASE_EYE_CY - 13 + jY, SSD1306_WHITE);
+  display.drawLine(RIGHT_EYE_CX - 12 + jX, BASE_EYE_CY + 3 + jY, RIGHT_EYE_CX + 12 + jX, BASE_EYE_CY - 14 + jY, SSD1306_WHITE);
+
+  display.fillCircle(LEFT_EYE_CX + 2 + jX, BASE_EYE_CY + 6 + jY, 2, SSD1306_BLACK);
+  display.fillCircle(RIGHT_EYE_CX - 2 + jX, BASE_EYE_CY + 6 + jY, 2, SSD1306_BLACK);
+
+  int mH = 4 + (12 * progress) / 100;
+  int mTop = 48 - mH / 2;
+  display.fillRoundRect(50 + jX, mTop + jY, 28, mH, 5, SSD1306_WHITE);
+  if (mH &gt;= 8) {
+    display.fillRoundRect(52 + jX, mTop + 2 + jY, 24, mH - 4, 3, SSD1306_BLACK);
+    display.fillRect(55 + jX, mTop + 2 + jY, 18, 3, SSD1306_WHITE);
+    if (mH &gt;= 12) {
+      display.fillRect(57 + jX, mTop + mH - 4 + jY, 14, 2, SSD1306_WHITE);
+    }
+  }
+
+  if (progress &gt;= 30) {
+    drawAnimeAngerVein(112 + jX, 10 + jY, (now / 150) % 2 == 0 ? 1 : 0);
+  }
+}
+
+void drawCoolDownFace(int progress, int fromLevel) {
+  int maxBrow = (fromLevel &gt;= 3) ? 17 : 14;
+  int browCut = maxBrow - (maxBrow * progress) / 100;
+
+  display.fillRoundRect(LEFT_EYE_CX - 10, BASE_EYE_CY - 13, 20, 26, 4, SSD1306_WHITE);
+  display.fillRoundRect(RIGHT_EYE_CX - 10, BASE_EYE_CY - 13, 20, 26, 4, SSD1306_WHITE);
+  drawSlantedEyebrows(browCut, 0, 0);
+
+  int pupY = BASE_EYE_CY + 4 - (4 * progress) / 100;
+  display.fillCircle(LEFT_EYE_CX, pupY, 3, SSD1306_BLACK);
+  display.fillCircle(RIGHT_EYE_CX, pupY, 3, SSD1306_BLACK);
+  display.drawPixel(LEFT_EYE_CX - 1, pupY - 1, SSD1306_WHITE);
+  display.drawPixel(RIGHT_EYE_CX - 1, pupY - 1, SSD1306_WHITE);
+
+  int midY = 45 + (4 * progress) / 100;
+  drawPoutMouth(midY);
+}
+
+void drawSleepyFace() {
+  display.fillRoundRect(LEFT_EYE_CX - BASE_EYE_W/2, BASE_EYE_CY, BASE_EYE_W, BASE_EYE_H/2, 4, SSD1306_WHITE);
+  display.fillRoundRect(RIGHT_EYE_CX - BASE_EYE_W/2, BASE_EYE_CY, BASE_EYE_W, BASE_EYE_H/2, 4, SSD1306_WHITE);
+  drawXiaozhiMouth(0, 0, 14, 3, 2);
+
+  zDriftOffset = (millis() / 500) % 8;
+  display.setTextSize(1);
+  display.setCursor(102 - zDriftOffset, 12 - zDriftOffset);
+  display.print(F(&quot;z&quot;));
+  display.setTextSize(2);
+  display.setCursor(110 - zDriftOffset, 2);
+  display.print(F(&quot;Z&quot;));
+}
+
+void drawMorphingSleepEyes(int curvature, int xShift, int yShift) {
+  int centers[2] = {LEFT_EYE_CX + xShift, RIGHT_EYE_CX + xShift};
+  for (int e = 0; e &lt; 2; e++) {
+    int cx = centers[e];
+    for (int dx = -9; dx &lt;= 9; dx++) {
+      int sag = (curvature * (81 - dx * dx) * 9) / (81 * 200);
+      int py = BASE_EYE_CY + yShift + sag;
+      display.drawPixel(cx + dx, py, SSD1306_WHITE);
+      display.drawPixel(cx + dx, py + 1, SSD1306_WHITE);
+      if (curvature &gt; 40) {
+        display.drawPixel(cx + dx, py + 2, SSD1306_WHITE);
+      }
+    }
+  }
+}
+
+void drawMorphingArchEyes(int archCurvature, int xShift, int yShift) {
+  int centers[2] = {LEFT_EYE_CX + xShift, RIGHT_EYE_CX + xShift};
+  for (int e = 0; e &lt; 2; e++) {
+    int cx = centers[e];
+    for (int dx = -9; dx &lt;= 9; dx++) {
+      int rise = (archCurvature * (81 - dx * dx) * 5) / (81 * 100);
+      int py = BASE_EYE_CY + yShift - rise;
+      display.drawPixel(cx + dx, py, SSD1306_WHITE);
+      display.drawPixel(cx + dx, py + 1, SSD1306_WHITE);
+      if (archCurvature &gt; 35) {
+        display.drawPixel(cx + dx, py + 2, SSD1306_WHITE);
+      }
+    }
+  }
+}
+
+void drawSequentialSleepZ(unsigned long deepSleepElapsed) {
+  // Before 500ms of deep sleep: no letters (peaceful silent sleep)
+  if (deepSleepElapsed &lt; 500) return;
+
+  // Staggered breathing loop period = 2400ms
+  unsigned long cycle = 2400;
+
+  // 1. First tiny &#x27;z&#x27; (spawns at +500ms)
+  unsigned long t1 = (deepSleepElapsed - 500) % cycle;
+  int z1Y = 24 - (int)((t1 * 12) / cycle); // drifts from Y=24 up to Y=12
+  int z1X = 96 + (int)((t1 * 6) / cycle);  // drifts slightly right
+  display.setTextSize(1);
+  display.setCursor(z1X, z1Y);
+  display.print(F(&quot;z&quot;));
+
+  // 2. Second medium &#x27;z&#x27; (spawns 750ms later, at +1250ms)
+  if (deepSleepElapsed &gt;= 1250) {
+    unsigned long t2 = (deepSleepElapsed - 1250) % cycle;
+    int z2Y = 18 - (int)((t2 * 12) / cycle); // drifts from Y=18 up to Y=6
+    int z2X = 104 + (int)((t2 * 6) / cycle);
+    display.setTextSize(1);
+    display.setCursor(z2X, z2Y);
+    display.print(F(&quot;z&quot;));
+  }
+
+  // 3. Third big bold &#x27;Z&#x27; (spawns another 750ms later, at +2000ms)
+  if (deepSleepElapsed &gt;= 2000) {
+    unsigned long t3 = (deepSleepElapsed - 2000) % cycle;
+    int z3Y = 12 - (int)((t3 * 11) / cycle); // drifts from Y=12 up to Y=1
+    int z3X = 112 + (int)((t3 * 5) / cycle);
+    display.setTextSize(2);
+    display.setCursor(z3X, z3Y);
+    display.print(F(&quot;Z&quot;));
+  }
+}
+
+void drawSleepingClosedFace() {
+  drawMorphingSleepEyes(100, 0, 1);
+  drawXiaozhiMouth(0, 0, 12, 2, 2);
+}
+
+// =====================================================================
+//  PAGE 2: ALL-IN-ONE DASHBOARD HUD (Clock, Date, Temp, Humidity, Light)
+// =====================================================================
+void renderAllInOneHUD() {
+  int tempC = lastDHTReading.temperatureC;
+  int hum   = lastDHTReading.humidity;
+
+  // --- Top Row: Date &amp; Comfort Badge ---
+  display.setTextSize(1);
+  display.setCursor(4, 3);
+
+  const char monthNames[] PROGMEM = &quot;JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC&quot;;
+  int mIdx = (currentMonth &gt;= 1 &amp;&amp; currentMonth &lt;= 12) ? (currentMonth - 1) * 3 : 0;
+  for (int k = 0; k &lt; 3; k++) {
+    display.write((char)pgm_read_byte(&amp;monthNames[mIdx + k]));
+  }
+  display.print(&#x27; &#x27;);
+  if (currentDay &lt; 10) display.print(&#x27;0&#x27;);
+  display.print(currentDay);
+  display.print(F(&quot;, &quot;));
+  display.print(currentYear);
+
+  display.setCursor(82, 3);
+  if (hum &lt; 35) {
+    display.print(F(&quot;[ DRY ]&quot;));
+  } else if (hum &gt; 68) {
+    display.print(F(&quot;[HUMID]&quot;));
+  } else {
+    display.print(F(&quot;[COMFY]&quot;));
+  }
+
+  // Top Divider Line
+  display.drawFastHLine(2, 14, 124, SSD1306_WHITE);
+
+  // --- Center Hero: Large Bold Digital Clock (HH:MM:SS) ---
+  display.setTextSize(2);
+  display.setCursor(16, 19);
+  if (currentHours &lt; 10) display.print(&#x27;0&#x27;);
+  display.print(currentHours);
+  display.print(&#x27;:&#x27;);
+  if (currentMinutes &lt; 10) display.print(&#x27;0&#x27;);
+  display.print(currentMinutes);
+  display.print(&#x27;:&#x27;);
+  if (currentSeconds &lt; 10) display.print(&#x27;0&#x27;);
+  display.print(currentSeconds);
+
+  // Bottom Divider Line
+  display.drawFastHLine(2, 38, 124, SSD1306_WHITE);
+
+  // --- Bottom Telemetry: Temperature, Humidity &amp; Room Light ---
+  display.setTextSize(1);
+
+  display.setCursor(4, 42);
+  display.print(F(&quot;TEMP:&quot;));
+  display.print((int)tempC);
+  display.print(F(&quot;.0&quot;));
+  display.print((char)247);
+  display.print(&#x27;C&#x27;);
+
+  display.setCursor(76, 42);
+  display.print(F(&quot;HUM:&quot;));
+  display.print((int)hum);
+  display.print(&#x27;%&#x27;);
+
+  display.setCursor(4, 53);
+  display.print(F(&quot;LGT :&quot;));
+  int ldrRaw = analogRead(PIN_LDR);
+  if (ldrRaw &lt; LDR_DARK_THRESHOLD) {
+    display.print(F(&quot;DARK&quot;));
+  } else if (ldrRaw &lt; 450) {
+    display.print(F(&quot;DIM&quot;));
+  } else {
+    display.print(F(&quot;BRIGHT&quot;));
+  }
+
+  display.setCursor(76, 53);
+  display.print((millis() &lt; tapCooldownUntil) ? F(&quot;[LOCKED]&quot;) : F(&quot;TAPx3 &gt;&quot;));
+}
+
+// =====================================================================
+//  PAGE 3: DAILY WISDOM QUOTE WITH ANIMATED CHATTERING MOUTH
+// =====================================================================
+void renderQuoteMode() {
+  display.setTextSize(1);
+  display.setCursor(6, 2);
+  display.print(F(&quot;~ QUOTE OF THE DAY ~&quot;));
+  display.drawFastHLine(4, 13, 120, SSD1306_WHITE);
+
+  char buffer[70];
+  strcpy_P(buffer, (char*)pgm_read_word(&amp;(quotesTable[currentQuoteIndex])));
+
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(4, 18);
+
+  int charCount = 0;
+  for (int i = 0; buffer[i] != &#x27;\0&#x27;; i++) {
+    display.print(buffer[i]);
+    charCount++;
+    if (charCount &gt;= 20 &amp;&amp; buffer[i] == &#x27; &#x27;) {
+      display.println();
+      charCount = 0;
+      display.setCursor(4, display.getCursorY());
+    }
+  }
+
+  // Mini Speaking Mouth Animation (Buddy reciting quote!)
+  drawXiaozhiMouth(0, 5, 14, currentMouthHeight, 4);
+
+  // Bottom labels
+  display.setCursor(4, 55);
+  display.print(F(&quot;- Buddy&quot;));
+  display.setCursor(76, 55);
+  display.print((millis() &lt; tapCooldownUntil) ? F(&quot;[LOCKED]&quot;) : F(&quot;TAPx3 &gt;&quot;));
+}
+
+// =====================================================================
+//  AUTOMATIC COMPILER REAL-TIME SYNCHRONIZATION
+// =====================================================================
+void syncClockWithCompilerTime() {
+  const char* timeStr = __TIME__;
+  currentHours   = (timeStr[0] - &#x27;0&#x27;) * 10 + (timeStr[1] - &#x27;0&#x27;);
+  currentMinutes = (timeStr[3] - &#x27;0&#x27;) * 10 + (timeStr[4] - &#x27;0&#x27;);
+  currentSeconds = (timeStr[6] - &#x27;0&#x27;) * 10 + (timeStr[7] - &#x27;0&#x27;);
+
+  const char* dateStr = __DATE__;
+  currentYear = (dateStr[7] - &#x27;0&#x27;) * 1000 + (dateStr[8] - &#x27;0&#x27;) * 100 + (dateStr[9] - &#x27;0&#x27;) * 10 + (dateStr[10] - &#x27;0&#x27;);
+  currentDay  = (dateStr[4] == &#x27; &#x27; ? 0 : (dateStr[4] - &#x27;0&#x27;) * 10) + (dateStr[5] - &#x27;0&#x27;);
+
+  char m0 = dateStr[0];
+  char m1 = dateStr[1];
+  char m2 = dateStr[2];
+  if (m0 == &#x27;J&#x27;) {
+    if (m1 == &#x27;a&#x27;) currentMonth = 1;
+    else if (m2 == &#x27;n&#x27;) currentMonth = 6;
+    else currentMonth = 7;
+  } else if (m0 == &#x27;F&#x27;) currentMonth = 2;
+  else if (m0 == &#x27;M&#x27;) currentMonth = (m2 == &#x27;r&#x27;) ? 3 : 5;
+  else if (m0 == &#x27;A&#x27;) currentMonth = (m1 == &#x27;p&#x27;) ? 4 : 8;
+  else if (m0 == &#x27;S&#x27;) currentMonth = 9;
+  else if (m0 == &#x27;O&#x27;) currentMonth = 10;
+  else if (m0 == &#x27;N&#x27;) currentMonth = 11;
+  else if (m0 == &#x27;D&#x27;) currentMonth = 12;
+
+#if ENABLE_SERIAL_DEBUG
+  Serial.print(F(&quot;Clock Synced to: &quot;));
+  if (currentHours &lt; 10) Serial.print(&#x27;0&#x27;);
+  Serial.print(currentHours);
+  Serial.print(&#x27;:&#x27;);
+  if (currentMinutes &lt; 10) Serial.print(&#x27;0&#x27;);
+  Serial.print(currentMinutes);
+  Serial.print(&#x27;:&#x27;);
+  if (currentSeconds &lt; 10) Serial.print(&#x27;0&#x27;);
+  Serial.println(currentSeconds);
+#endif
+}
+
+void updateClock() {
+  unsigned long now = millis();
+  if (now - lastClockTick &gt;= 1000) {
+    lastClockTick += 1000;
+    currentSeconds++;
+    if (currentSeconds &gt;= 60) {
+      currentSeconds = 0;
+      currentMinutes++;
+      if (currentMinutes &gt;= 60) {
+        currentMinutes = 0;
+        currentHours++;
+        if (currentHours &gt;= 24) {
+          currentHours = 0;
+          currentDay++;
+        }
+        updateDayPeriod();
+      }
+    }
+  }
+}
+
+void updateDayPeriod() {
+  if (currentHours &gt;= 6 &amp;&amp; currentHours &lt; 12) {
+    currentPeriod = PERIOD_MORNING;
+  } else if (currentHours &gt;= 12 &amp;&amp; currentHours &lt; 18) {
+    currentPeriod = PERIOD_AFTERNOON;
+  } else if (currentHours &gt;= 18 &amp;&amp; currentHours &lt; 22) {
+    currentPeriod = PERIOD_EVENING;
+  } else {
+    currentPeriod = PERIOD_NIGHT;
+  }
+}
+</code></pre>
+    </div>
+
+    <!-- 6. SHORT VIDEO TEST -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">6</span>
+        Short Video Test
+      </h2>
+      <p>Demonstration video showcasing the Desk Buddy hardware startup, OLED facial expressions, and battery-powered portable operation.</p>
+      <p><strong>Video Link:</strong> <a class="link-button" href="https://youtu.be/your_video_id_here" target="_blank">▶ Watch Demonstration Video (https://youtu.be/your_video_id_here)</a></p>
+      <p style="font-size:12.5px; color:#4a5568; margin-top:6px;"><strong>Notes:</strong> Demonstration highlights the Pepper&#x27;s Ghost 3D floating illusion, the interactive 3-tier progressive anger escalation (curious ?, huffing with billowing steam, super angry 💢 with rage tremors), triple-tap HUD menu switching, room light circadian auto-sleep reaction (zZz), DHT11 live climate dashboard, real-time clock, daily quotes, and creator startup splash screen.</p>
+    </div>
+
+    <!-- 7. SHORT DESCRIPTION OF THE PROJECT FUNCTIONALITY -->
+    <div class="section-card">
+      <h2 class="section-title">
+        <span class="section-num">7</span>
+        Short Description of the Project Functionality
+      </h2>
+      <div style="font-size:13.5px; line-height:1.65; color:#2d3748; background:#f7fafc; border-left:4px solid #2b6cb0; padding:12px 16px; border-radius:0 6px 6px 0;">
+        The 3D Hologram Desk Buddy v2.0 is an interactive desktop companion engineered by Rairolf Rabang and Nicole Margareth Sibal using an Arduino UNO R3 from the MakerLAB Upgraded Learning Kit v2 and an extra-small mini breadboard for a sleek, compact, and aesthetic form factor. By utilizing a 0.96-inch monochrome I2C OLED display (SSD1306) and the optical Pepper&#x27;s Ghost principle with a 45-degree transparent reflection plate, high-contrast graphics appear to float seamlessly in mid-air with zero visible display frame. The system features: (1) expressive animated companion faces with physical motion reactivity, including an interactive 3-tier progressive anger escalation engine (Single tap: Curious &#x27;?&#x27;; Second tap within 5s: Little Angry with alive huffing and billowing steam; Third tap within 5s: Super Angry with rage tremors and pulsating anger vein 💢, followed by a calm-down exhale) and triple-tap HUD page switching; (2) a circadian auto-sleep engine that detects room lighting via a photoresistor on Pin A0, gracefully putting the companion into deep sleep with floating &#x27;zZz&#x27; holograms when lights are turned off; (3) a live DHT11 environmental climate dashboard reporting ambient Temperature (°C and °F), Relative Humidity (%), and Comfort index; (4) an automatic Real-Time Clock synced with computer compile time; (5) a rotating Quote of the Day stored in Flash PROGMEM; and (6) a custom startup splash screen crediting creators Rairolf Rabang &amp; Nicole Margareth Sibal. Powered portably by a 9V battery with non-blocking timing, the Desk Buddy delivers an entertaining, functional, and futuristic companion for any workspace.
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Generated automatically by Desk Buddy Case Study Prompter | Arduino UNO &bull; 0.96" OLED &bull; 9V Battery
+    </div>
+
+  </div>
+</body>
+</html>

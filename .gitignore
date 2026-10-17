@@ -1,0 +1,48 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Arduino Build Outputs
+build/
+*.hex
+*.elf
+*.bin
+*.eep
+*.o
+*.a
+*.d
+
+# IDE & Editor Configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Python Virtual Environments & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+
+# Local Environment & Secrets
+.env
+*.local
