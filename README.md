@@ -7,6 +7,7 @@
 [![Display](https://img.shields.io/badge/Display-0.96%22%20SSD1306%20OLED-000000.svg)](https://learn.adafruit.com/monochrome-oled-breakouts)
 [![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20Arduino-00599C.svg?logo=c%2B%2B&logoColor=white)](DeskBuddy/DeskBuddy.ino)
 [![Optics](https://img.shields.io/badge/Optics-45%C2%B0%20Pepper's%20Ghost-9333EA.svg)](#-peppers-ghost-optical-assembly)
+[![Live Manual](https://img.shields.io/badge/Live_Web_Manual-tofutof.github.io%2FKNOBY-blue.svg?logo=github)](https://tofutof.github.io/KNOBY/)
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](#-quick-start)
 
 **An interactive 3D Pepper's Ghost Hologram Desktop Companion powered by an Arduino UNO R3, built on an extra-small mini breadboard for a sleek, compact, and aesthetic desk companion.**
@@ -18,7 +19,7 @@
 <img src="assets/knoby_pixel_infographic.jpg" alt="KNOBY 3D Hologram Desk Buddy Infographic" width="850" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" />
 
 <p align="center">
-  <a href="docs/KNOBY_INFOGRAPHIC.html"><strong>🌐 View Interactive Animated Web Infographic Guide</strong></a>
+  <a href="https://tofutof.github.io/KNOBY/"><strong>🌐 Launch Live Interactive Web Manual & Guide (tofutof.github.io/KNOBY)</strong></a>
 </p>
 
 </div>
@@ -183,11 +184,12 @@ DESK BUDDY/
 │   ├── DeskBuddy.ino             # Production Arduino sketch firmware
 │   └── README.md                 # Firmware configuration details
 │
-├── docs/                         # Detailed guides & specifications
+├── docs/                         # Detailed guides & live GitHub Pages manual
+│   ├── index.html                # Live interactive web manual (GitHub Pages entry)
 │   ├── STEP_BY_STEP_SETUP_GUIDE.md # Beginner step-by-step maker guide
 │   ├── WIRING_GUIDE.md           # Mini-breadboard visual wiring guide
 │   ├── PROJECT_FUNCTIONALITY.md  # Detailed engineering & functional specs
-│   └── KNOBY_INFOGRAPHIC.html    # Interactive web infographic
+│   └── assets/                   # Web-served schematics & infographics
 │
 ├── CONTRIBUTING.md               # Community guidelines for contributions
 ├── CODE_OF_CONDUCT.md            # Contributor Covenant v2.1

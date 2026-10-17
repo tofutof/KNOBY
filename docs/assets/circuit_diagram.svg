@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0b1120; }
+      .grid { stroke: #1e293b; stroke-width: 1; stroke-dasharray: 4,4; }
+      .box { rx: 8; ry: 8; stroke-width: 1.5; }
+      .ard-box { fill: #042f2e; stroke: #14b8a6; stroke-width: 2; }
+      .oled-box { fill: #0f172a; stroke: #38bdf8; }
+      .prism-box { fill: #0f172a; stroke: #818cf8; stroke-dasharray: 4,3; }
+      .tilt-box { fill: #0f172a; stroke: #c084fc; }
+      .dht-box { fill: #0f172a; stroke: #4ade80; }
+      .ldr-box { fill: #0f172a; stroke: #fbbf24; }
+      .bat-box { fill: #0f172a; stroke: #f87171; }
+      .text-title { font-family: -apple-system, sans-serif; font-size: 15px; font-weight: 800; fill: #f8fafc; letter-spacing: 0.5px; }
+      .text-authors { font-family: -apple-system, sans-serif; font-size: 12px; font-weight: 600; fill: #38bdf8; }
+      .text-head { font-family: -apple-system, monospace; font-size: 12px; font-weight: bold; fill: #ffffff; }
+      .text-desc { font-family: -apple-system, sans-serif; font-size: 10px; fill: #94a3b8; }
+      .text-pin { font-family: -apple-system, monospace; font-size: 10px; font-weight: 600; fill: #e2e8f0; }
+      .wire-5v { stroke: #ef4444; stroke-width: 2.2; fill: none; }
+      .wire-gnd { stroke: #64748b; stroke-width: 2.2; fill: none; }
+      .wire-sda { stroke: #38bdf8; stroke-width: 2.2; fill: none; }
+      .wire-scl { stroke: #eab308; stroke-width: 2.2; fill: none; }
+      .wire-d2 { stroke: #c084fc; stroke-width: 2.2; fill: none; }
+      .wire-d4 { stroke: #4ade80; stroke-width: 2.2; fill: none; }
+      .wire-a0 { stroke: #fb923c; stroke-width: 2.2; fill: none; }
+      .wire-bat { stroke: #dc2626; stroke-width: 2.2; stroke-dasharray: 4,3; fill: none; }
+      .ray { stroke: #7dd3fc; stroke-width: 1.5; stroke-dasharray: 3,3; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="480" class="bg" rx="10"/>
+
+  <!-- Top Header Bar -->
+  <rect x="20" y="10" width="840" height="36" rx="6" fill="#1e293b"/>
+  <text x="35" y="33" class="text-title">DESK BUDDY v2.0 &#8226; CIRCUIT SCHEMATIC &amp; HARDWARE ARCHITECTURE</text>
+  <text x="610" y="33" class="text-authors">Rairolf Rabang &amp; Nicole Margareth Sibal</text>
+
+  <!-- ================= LEFT COLUMN ================= -->
+  <!-- 1. 0.96" OLED Display -->
+  <rect x="25" y="60" width="195" height="130" class="box oled-box"/>
+  <rect x="35" y="70" width="175" height="65" rx="4" fill="#000000" stroke="#0284c7"/>
+  <!-- Mini OLED Face -->
+  <circle cx="95" cy="102" r="8" fill="#38bdf8"/>
+  <circle cx="150" cy="102" r="8" fill="#38bdf8"/>
+  <path d="M 112 110 Q 122.5 118 133 110" stroke="#38bdf8" stroke-width="2" fill="none"/>
+  <text x="35" y="152" class="text-head">0.96" Monochrome OLED</text>
+  <text x="35" y="167" class="text-desc">SSD1306 &#8226; 128x64 &#8226; I2C Address 0x3C</text>
+  <!-- OLED Pins on Right edge of OLED box -->
+  <circle cx="220" cy="78" r="3.5" fill="#64748b"/><text x="188" y="82" class="text-pin">GND</text>
+  <circle cx="220" cy="98" r="3.5" fill="#ef4444"/><text x="188" y="102" class="text-pin">VCC</text>
+  <circle cx="220" cy="118" r="3.5" fill="#eab308"/><text x="188" y="122" class="text-pin">SCL</text>
+  <circle cx="220" cy="138" r="3.5" fill="#38bdf8"/><text x="188" y="142" class="text-pin">SDA</text>
+
+  <!-- 2. Optical Pepper's Ghost Reflector -->
+  <rect x="25" y="202" width="195" height="105" class="box prism-box"/>
+  <text x="35" y="222" class="text-head" fill="#a5b4fc">Pepper's Ghost Reflector</text>
+  <text x="35" y="238" class="text-desc">45° Clear Acrylic Beam Splitter</text>
+  <!-- Mini Prism Graphic -->
+  <line x1="45" y1="285" x2="115" y2="250" stroke="#818cf8" stroke-width="2.5"/>
+  <path d="M 55 250 L 80 267 L 130 267" class="ray"/>
+  <text x="135" y="271" class="text-desc" fill="#c7d2fe">3D Floating Face</text>
+
+  <!-- 3. 9V Battery -->
+  <rect x="25" y="320" width="195" height="95" class="box bat-box"/>
+  <text x="35" y="345" class="text-head" fill="#fca5a5">9V Alkaline Battery</text>
+  <text x="35" y="362" class="text-desc">DC Barrel Jack / VIN Input</text>
+  <text x="35" y="377" class="text-desc">Portable Standalone Power</text>
+  <circle cx="220" cy="350" r="3.5" fill="#dc2626"/><text x="185" y="354" class="text-pin">(+) VIN</text>
+  <circle cx="220" cy="385" r="3.5" fill="#64748b"/><text x="185" y="389" class="text-pin">(-) GND</text>
+
+  <!-- ================= CENTER: ARDUINO UNO R3 ================= -->
+  <rect x="260" y="60" width="270" height="355" class="box ard-box"/>
+  <rect x="280" y="75" width="230" height="40" rx="4" fill="#134e4a"/>
+  <text x="305" y="100" class="text-head" font-size="14">ARDUINO UNO R3</text>
+  <text x="325" y="130" class="text-desc" fill="#ccfbf1">ATmega328P Microcontroller</text>
+
+  <!-- Arduino Left Pins (Power & Analog) -->
+  <circle cx="260" cy="165" r="4" fill="#ef4444"/><text x="272" y="169" class="text-pin">5V  [POWER]</text>
+  <circle cx="260" cy="205" r="4" fill="#64748b"/><text x="272" y="209" class="text-pin">GND [GROUND]</text>
+  <circle cx="260" cy="245" r="4" fill="#dc2626"/><text x="272" y="249" class="text-pin">VIN [BATTERY IN]</text>
+  <circle cx="260" cy="295" r="4" fill="#fb923c"/><text x="272" y="299" class="text-pin">A0  [LDR LIGHT]</text>
+  <circle cx="260" cy="340" r="4" fill="#38bdf8"/><text x="272" y="344" class="text-pin">A4  [SDA / I2C]</text>
+  <circle cx="260" cy="375" r="4" fill="#eab308"/><text x="272" y="379" class="text-pin">A5  [SCL / I2C]</text>
+
+  <!-- Arduino Right Pins (Digital) -->
+  <circle cx="530" cy="180" r="4" fill="#c084fc"/><text x="440" y="184" class="text-pin">PIN 2 [TILT]</text>
+  <circle cx="530" cy="235" r="4" fill="#4ade80"/><text x="430" y="239" class="text-pin">PIN 4 [DHT11]</text>
+  <circle cx="530" cy="295" r="4" fill="#64748b"/><text x="470" y="299" class="text-pin">GND</text>
+  <circle cx="530" cy="345" r="4" fill="#ef4444"/><text x="475" y="349" class="text-pin">5V</text>
+
+  <!-- ================= RIGHT COLUMN: SENSORS ================= -->
+  <!-- 1. Motion Tilt Ball Switch -->
+  <rect x="580" y="60" width="275" height="105" class="box tilt-box"/>
+  <text x="620" y="85" class="text-head" fill="#e9d5ff">TILT BALL SWITCH</text>
+  <text x="620" y="103" class="text-desc">Pin 2 &#8226; INPUT_PULLUP (Zero Resistors)</text>
+  <text x="620" y="118" class="text-desc">3-Tier Escalation: ? -&gt; Steam -&gt; Super 💢</text>
+  <text x="620" y="133" class="text-desc">Triple-Tap: Carousel HUD Switcher</text>
+  <circle cx="580" cy="95" r="3.5" fill="#c084fc"/><text x="590" y="99" class="text-pin">SIG</text>
+  <circle cx="580" cy="130" r="3.5" fill="#64748b"/><text x="590" y="134" class="text-pin">GND</text>
+
+  <!-- 2. DHT11 Sensor -->
+  <rect x="580" y="180" width="275" height="105" class="box dht-box"/>
+  <text x="620" y="205" class="text-head" fill="#bbf7d0">DHT11 SENSOR</text>
+  <text x="620" y="223" class="text-desc">Pin 4 &#8226; Digital 1-Wire Protocol</text>
+  <text x="620" y="238" class="text-desc">Ambient Temperature (°C/°F) &amp; Humidity (%)</text>
+  <text x="620" y="253" class="text-desc">Polls every 2.5s with non-blocking timer</text>
+  <circle cx="580" cy="205" r="3.5" fill="#ef4444"/><text x="590" y="209" class="text-pin">VCC</text>
+  <circle cx="580" cy="235" r="3.5" fill="#4ade80"/><text x="590" y="239" class="text-pin">DATA</text>
+  <circle cx="580" cy="265" r="3.5" fill="#64748b"/><text x="590" y="269" class="text-pin">GND</text>
+
+  <!-- 3. LDR Light Sensor -->
+  <rect x="580" y="300" width="275" height="115" class="box ldr-box"/>
+  <text x="620" y="325" class="text-head" fill="#fef08a">LDR LIGHT SENSOR</text>
+  <text x="620" y="343" class="text-desc">Pin A0 &#8226; Circadian Auto-Sleep System</text>
+  <text x="620" y="358" class="text-desc">Voltage divider with 10kΩ pull-down resistor</text>
+  <text x="620" y="373" class="text-desc">Threshold &lt; 200 triggers deep sleep 'zZz'</text>
+  <circle cx="580" cy="330" r="3.5" fill="#fb923c"/><text x="590" y="334" class="text-pin">SIG (A0)</text>
+  <circle cx="580" cy="365" r="3.5" fill="#ef4444"/><text x="590" y="369" class="text-pin">5V</text>
+  <circle cx="580" cy="395" r="3.5" fill="#64748b"/><text x="590" y="399" class="text-pin">GND</text>
+
+  <!-- ================= WIRING TRACES ================= -->
+  <!-- 9V Battery to VIN / GND -->
+  <path d="M 220 350 L 240 350 L 240 245 L 260 245" class="wire-bat"/>
+  <path d="M 220 385 L 245 385 L 245 205 L 260 205" class="wire-gnd"/>
+
+  <!-- OLED I2C SDA & SCL -->
+  <path d="M 220 138 L 240 138 L 240 340 L 260 340" class="wire-sda"/>
+  <path d="M 220 118 L 245 118 L 245 375 L 260 375" class="wire-scl"/>
+
+  <!-- OLED 5V & GND -->
+  <path d="M 220 98 L 250 98 L 250 165 L 260 165" class="wire-5v"/>
+  <path d="M 220 78 L 255 78 L 255 205 L 260 205" class="wire-gnd"/>
+
+  <!-- Digital Pin 2 (Tilt) -->
+  <path d="M 530 180 L 555 180 L 555 95 L 580 95" class="wire-d2"/>
+  <!-- Tilt GND -->
+  <path d="M 580 130 L 560 130 L 560 295 L 530 295" class="wire-gnd"/>
+
+  <!-- Digital Pin 4 (DHT11 Data) -->
+  <path d="M 530 235 L 580 235" class="wire-d4"/>
+  <!-- DHT11 VCC & GND -->
+  <path d="M 580 205 L 565 205 L 565 345 L 530 345" class="wire-5v"/>
+  <path d="M 580 265 L 550 265 L 550 295 L 530 295" class="wire-gnd"/>
+
+  <!-- LDR Pin A0 (Analog Signal) -->
+  <path d="M 260 295 L 250 295 L 250 425 L 560 425 L 560 330 L 580 330" class="wire-a0"/>
+  <!-- LDR 5V & GND -->
+  <path d="M 580 365 L 570 365 L 570 345 L 530 345" class="wire-5v"/>
+  <path d="M 580 395 L 550 395 L 550 295 L 530 295" class="wire-gnd"/>
+
+  <!-- ================= BOTTOM LEGEND ================= -->
+  <rect x="25" y="435" width="830" height="32" rx="4" fill="#1e293b"/>
+  <circle cx="45" cy="451" r="5" fill="#ef4444"/><text x="56" y="455" class="text-desc">5V Power</text>
+  <circle cx="130" cy="451" r="5" fill="#64748b"/><text x="141" y="455" class="text-desc">GND Common</text>
+  <circle cx="230" cy="451" r="5" fill="#38bdf8"/><text x="241" y="455" class="text-desc">SDA (A4)</text>
+  <circle cx="315" cy="451" r="5" fill="#eab308"/><text x="326" y="455" class="text-desc">SCL (A5)</text>
+  <circle cx="400" cy="451" r="5" fill="#c084fc"/><text x="411" y="455" class="text-desc">D2 Tilt (Escalation)</text>
+  <circle cx="540" cy="451" r="5" fill="#4ade80"/><text x="551" y="455" class="text-desc">D4 DHT11 Data</text>
+  <circle cx="655" cy="451" r="5" fill="#fb923c"/><text x="666" y="455" class="text-desc">A0 Light Sensor</text>
+  <line x1="770" y1="451" x2="795" y2="451" class="wire-bat"/><text x="802" y="455" class="text-desc">9V VIN</text>
+</svg>
