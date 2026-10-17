@@ -135,7 +135,7 @@ The tilt switch contains a tiny rolling metallic ball in a golden or black cylin
    - Rigid clear plastic packaging or overhead projector film
 2. **Mounting Angle:** Position the sheet at an exact **45-degree angle** directly above the OLED screen.
 3. **Screen Orientation Setting:**
-   - **Base Mount (Screen flat, facing UP):** Keep `#define SCREEN_ROTATION 0` in [`DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino).
+   - **Base Mount (Screen flat, facing UP):** Keep `#define SCREEN_ROTATION 0` in [`DeskBuddy/DeskBuddy.ino`](../DeskBuddy/DeskBuddy.ino).
    - **Ceiling Mount (Screen hanging, facing DOWN):** Change to `#define SCREEN_ROTATION 2` (flips image 180° so the reflection is upright).
 4. **Why OLED is essential for 3D Holograms:**
    Unlike traditional LCDs that leak gray backlight, OLED pixels turn 100% OFF for black background. Only the white glowing companion graphics emit light, making them reflect crisply on the transparent reflector with no visible screen border!
@@ -162,7 +162,7 @@ The tilt switch contains a tiny rolling metallic ball in a golden or black cylin
 - [ ] LDR divider connected to A0 with 10kΩ resistor to GND.
 - [ ] DHT11 data line wired to D4.
 - [ ] Open Arduino IDE -> Select **Arduino Uno** -> Select COM / Serial Port.
-- [ ] Upload [`DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino).
+- [ ] Upload [`DeskBuddy/DeskBuddy.ino`](../DeskBuddy/DeskBuddy.ino).
 - [ ] Open Serial Monitor at **9600 baud** to verify time sync and sensor readings.
 - [ ] Tap the breadboard to watch the **Jump Pack** spring into action!
 - [ ] Cover the LDR with your thumb to verify **Sleep Mode**!

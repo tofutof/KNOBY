@@ -46,3 +46,7 @@ dist/
 # Local Environment & Secrets
 .env
 *.local
+
+# Coursework & Internal Logging (Local Only)
+Case_Study_Prompter/
+Logbook/

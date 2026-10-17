@@ -2,23 +2,21 @@
 
 This folder contains the complete firmware and wiring architecture for the **Desk Buddy v2.0** desktop companion.
 
-> 📘 **Looking for the complete beginner build walkthrough?** See the full [`STEP_BY_STEP_SETUP_GUIDE.md`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/STEP_BY_STEP_SETUP_GUIDE.md) at the project root!
+> 📘 **Looking for the complete beginner build walkthrough?** See the full [`docs/STEP_BY_STEP_SETUP_GUIDE.md`](../docs/STEP_BY_STEP_SETUP_GUIDE.md) in the `docs/` folder!
 
 ---
 
 ## 📁 Directory Structure
 ```text
-Project/
-├── DeskBuddy/
-│   └── DeskBuddy.ino       # Main Arduino IDE sketch file (Triple-Tap & All-in-One HUD)
-├── WIRING_GUIDE.md         # Mini-breadboard layout, sensor wiring & hologram optics
-└── README.md               # Quick upload and configuration guide
+DeskBuddy/
+├── DeskBuddy.ino       # Main Arduino IDE sketch file (Triple-Tap & All-in-One HUD)
+└── README.md           # Quick upload and configuration guide
 ```
 
 ---
 
 ## 🌟 Interactive Features & Hardware Capabilities
-1. **🤖 Xiaozhi-Inspired Animated Face Engine:**
+1. **🤖 Procedural Animated Face Engine (Xiaozhi-Inspired):**
    - **Organic Saccade Drifts:** Eyes and mouth subtly micro-shift (±2px X, ±1px Y) every few seconds to create lifelike breathing.
    - **Multi-Phase Fluid Blinking:** 4-stage smooth squash-and-stretch eye curve (Open ➔ Squash 6px ➔ Slit 2px ➔ Rebound 10px ➔ Open).
    - **Dynamic Animated Mouth:** Cute resting smile bar that tracks saccades, curious head-tilt smirks, and animated talking/chattering mouth that pulses when reciting daily quotes!
@@ -49,7 +47,7 @@ Project/
 ## 🚀 How to Flash via Arduino IDE
 1. Open the **Arduino IDE**.
 2. Go to **File -> Open...** and select:
-   [`Project/DeskBuddy/DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino)
+   [`DeskBuddy.ino`](DeskBuddy.ino)
 3. Under **Tools -> Board**, select **Arduino Uno**.
 4. Under **Tools -> Port**, select your Arduino USB Serial Port.
 5. In **Tools -> Manage Libraries...**, ensure the following are installed:
@@ -61,7 +59,7 @@ Project/
 ---
 
 ## ⚙️ Configuration Options
-In [`DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino):
+In [`DeskBuddy.ino`](DeskBuddy.ino):
 - **Hologram Reflection Orientation:**
   ```cpp
   #define SCREEN_ROTATION 0 // Set to 2 if reflection appears upside down

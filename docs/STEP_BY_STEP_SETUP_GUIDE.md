@@ -123,7 +123,7 @@ Make the point-to-point connections listed in the table below:
 ## 🚀 STEP 5: Uploading the Firmware
 
 1. In Arduino IDE, open:
-   [`Project/DeskBuddy/DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino)
+   [`DeskBuddy/DeskBuddy.ino`](../DeskBuddy/DeskBuddy.ino)
 2. Click the **Upload** button (the arrow icon in the top toolbar).
 3. Wait for the bottom status console to say **"Done uploading"**.
 4. **Watch the OLED display!** Within 2 seconds, you should see the **`DESK BUDDY v2.0`** splash screen followed by the live companion face.
@@ -156,7 +156,7 @@ Pepper's Ghost is the optical technique used in theme parks and high-end hologra
 1. **Prepare the Reflector:** Cut a small rectangle (approximately 50mm × 50mm) from a clear CD jewel case cover, clear acrylic sheet, or rigid overhead projector transparency.
 2. **Mount at 45 Degrees:** Prop the clear sheet at an exact **45-degree angle** directly above the OLED screen.
 3. **If the Reflected Image Appears Upside-Down:**
-   In [`DeskBuddy.ino`](file:///Users/tofu_./Desktop/Projects/DESK%20BUDDY/Project/DeskBuddy/DeskBuddy.ino#L48), change:
+   In [`DeskBuddy/DeskBuddy.ino`](../DeskBuddy/DeskBuddy.ino), change:
    ```cpp
    #define SCREEN_ROTATION 0  // Change to 2 to flip 180° for top-mounted setups
    ```

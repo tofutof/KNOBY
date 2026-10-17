@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Arduino%20UNO%20R3-00979D.svg?logo=arduino&logoColor=white)](https://www.arduino.cc/)
 [![Display](https://img.shields.io/badge/Display-0.96%22%20SSD1306%20OLED-000000.svg)](https://learn.adafruit.com/monochrome-oled-breakouts)
-[![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20Arduino-00599C.svg?logo=c%2B%2B&logoColor=white)](Project/DeskBuddy/DeskBuddy.ino)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20Arduino-00599C.svg?logo=c%2B%2B&logoColor=white)](DeskBuddy/DeskBuddy.ino)
 [![Optics](https://img.shields.io/badge/Optics-45%C2%B0%20Pepper's%20Ghost-9333EA.svg)](#-peppers-ghost-optical-assembly)
 [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](#-quick-start)
 
@@ -16,6 +16,10 @@
 <br />
 
 <img src="assets/knoby_pixel_infographic.jpg" alt="KNOBY 3D Hologram Desk Buddy Infographic" width="850" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" />
+
+<p align="center">
+  <a href="docs/KNOBY_INFOGRAPHIC.html"><strong>🌐 View Interactive Animated Web Infographic Guide</strong></a>
+</p>
 
 </div>
 
@@ -101,6 +105,12 @@ All sensors and the display connect directly to the Arduino Uno R3:
 +-----------------------------------+
 ```
 
+<div align="center">
+  <img src="assets/circuit_diagram.svg" alt="Circuit Schematic & Hardware Architecture" width="850" style="border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.3);" />
+</div>
+
+> 📘 **Detailed Breadboard Layout:** See our full [Wiring & Optics Guide](docs/WIRING_GUIDE.md) for step-by-step breadboard column assignments and voltage divider wiring.
+
 > ⚠️ **Safety Tip:** Always inspect your OLED module silkscreen before wiring! Some variants have `GND-VCC-SCL-SDA` while others have `VCC-GND-SCL-SDA`. Connecting power backwards will permanently damage the SSD1306 controller.
 
 ---
@@ -146,12 +156,12 @@ Open **Tools -> Manage Libraries...** and install:
    git clone https://github.com/tofutof/DESK-BUDDY.git
    cd DESK-BUDDY
    ```
-2. Open [`Project/DeskBuddy/DeskBuddy.ino`](Project/DeskBuddy/DeskBuddy.ino) in Arduino IDE.
+2. Open [`DeskBuddy/DeskBuddy.ino`](DeskBuddy/DeskBuddy.ino) in Arduino IDE.
 3. Under **Tools -> Board**, select **Arduino Uno**.
 4. Under **Tools -> Port**, select the USB serial port for your board.
 5. Click **Upload** (Ctrl+U / Cmd+U).
 
-> 📘 **Step-by-Step Build Guide:** See our full [Step-by-Step Setup Guide](STEP_BY_STEP_SETUP_GUIDE.md) for detailed hardware assembly and testing instructions.
+> 📘 **Step-by-Step Build Guide:** See our full [Step-by-Step Setup Guide](docs/STEP_BY_STEP_SETUP_GUIDE.md) for detailed hardware assembly, testing instructions, and [Project Functionality Specification](docs/PROJECT_FUNCTIONALITY.md).
 
 ---
 
@@ -166,28 +176,19 @@ DESK BUDDY/
 │   └── pull_request_template.md
 │
 ├── assets/                       # Infographics, schematics, and project media
-│   └── knoby_pixel_infographic.jpg
+│   ├── circuit_diagram.svg       # Vector circuit schematic diagram
+│   └── knoby_pixel_infographic.jpg # Pixel-art user guide
 │
-├── Project/                      # Core firmware and hardware schematics
-│   ├── DeskBuddy/
-│   │   └── DeskBuddy.ino         # Production Arduino sketch firmware
-│   ├── WIRING_GUIDE.md           # Mini-breadboard visual wiring guide
+├── DeskBuddy/                    # Core Arduino firmware sketch
+│   ├── DeskBuddy.ino             # Production Arduino sketch firmware
 │   └── README.md                 # Firmware configuration details
 │
-├── Case_Study_Prompter/          # Academic project report & PDF generator tools
-│   ├── prompter.py               # Case study generation script
-│   ├── case_study_data.json      # Structured project metadata
-│   ├── case_study_template.md    # Markdown report template
-│   ├── Final_Case_Study.html     # Web-ready report companion
-│   └── Final_Case_Study.pdf      # Complete academic case study report
+├── docs/                         # Detailed guides & specifications
+│   ├── STEP_BY_STEP_SETUP_GUIDE.md # Beginner step-by-step maker guide
+│   ├── WIRING_GUIDE.md           # Mini-breadboard visual wiring guide
+│   ├── PROJECT_FUNCTIONALITY.md  # Detailed engineering & functional specs
+│   └── KNOBY_INFOGRAPHIC.html    # Interactive web infographic
 │
-├── Logbook/                      # Development chronicle & milestone logs
-│   ├── PROJECT_LOGBOOK.md        # Comprehensive dated work log
-│   └── log_entry.py              # CLI tool for timestamped log entries
-│
-├── KNOBY_INFOGRAPHIC.html        # Interactive web infographic
-├── PROJECT_FUNCTIONALITY.md      # Detailed engineering & functional specs
-├── STEP_BY_STEP_SETUP_GUIDE.md   # Beginner step-by-step maker guide
 ├── CONTRIBUTING.md               # Community guidelines for contributions
 ├── CODE_OF_CONDUCT.md            # Contributor Covenant v2.1
 ├── SECURITY.md                   # Vulnerability disclosure policy
