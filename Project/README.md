@@ -29,7 +29,7 @@ Project/
      - **Calm Down:** Cools down completely back to calm companion mode if left alone for 5 seconds!
 2. **👉 Triple-Tap Navigation (Tilt Ball Switch on Pin 2):**
    - **3 Quick Taps on the Case / Desk:** Instantly advances to the next page!
-     - **Page 1: Xiaozhi Companion Face** (Living breathing pet)
+     - **Page 1: Companion Face (Xiaozhi-Inspired)** (Living breathing pet)
      - **Page 2: All-in-One Dashboard HUD** (Real-time Clock, Calendar Date, Temp, Humidity, Light level)
      - **Page 3: Daily Wisdom Quote** (Flash `PROGMEM` quotes with speaking buddy mouth)
 2. **📊 All-in-One Dashboard HUD:**

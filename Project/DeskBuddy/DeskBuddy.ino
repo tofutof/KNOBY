@@ -1,7 +1,8 @@
 /*
  * =====================================================================
  *  KNOBY v2.0 - 3D HOLOGRAM DESK BUDDY
- *  Xiaozhi Interactive Face Engine & Multi-Sensor Companion
+ *  Interactive Procedural Face Engine & Multi-Sensor Companion
+ *  (Visual design inspired by the Xiaozhi AI aesthetic)
  * =====================================================================
  *  Authors:         Rairolf Rabang & Nicole Margareth Sibal
  *  License:         MIT License (Copyright (c) 2026 Rairolf Rabang & Nicole Margareth Sibal)
@@ -14,7 +15,7 @@
  *  Form Factor:     Extra-Small Mini Breadboard (170 Tie-Points)
  *  Power:           9V Battery / USB 5V
  *
- *  XIAOZHI FACE ENGINE FEATURES (Adapted for Arduino Uno SSD1306):
+ *  PROCEDURAL FACE ENGINE FEATURES (Inspired by Xiaozhi aesthetic, custom-built for Arduino Uno SSD1306):
  *    1. FLUID IDLE GAZE ENGINE: Liquid smooth Lerp gliding across the display!
  *       The eyes actively inspect their surroundings (glance left -13px, glance
  *       right +13px, look up curiously -7px, diagonal glances, and modest downward rest)
