@@ -153,8 +153,8 @@ Open **Tools -> Manage Libraries...** and install:
 ### 2. Flashing the Firmware
 1. Clone this repository:
    ```bash
-   git clone https://github.com/tofutof/DESK-BUDDY.git
-   cd DESK-BUDDY
+   git clone https://github.com/tofutof/KNOBY.git
+   cd KNOBY
    ```
 2. Open [`DeskBuddy/DeskBuddy.ino`](DeskBuddy/DeskBuddy.ino) in Arduino IDE.
 3. Under **Tools -> Board**, select **Arduino Uno**.
