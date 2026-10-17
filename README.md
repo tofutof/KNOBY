@@ -19,7 +19,9 @@
 <img src="assets/knoby_pixel_infographic.jpg" alt="KNOBY 3D Hologram Desk Buddy Infographic" width="850" style="border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.25);" />
 
 <p align="center">
-  <a href="https://tofutof.github.io/KNOBY/"><strong>🌐 Launch Live Interactive Web Manual & Guide (tofutof.github.io/KNOBY)</strong></a>
+  <a href="https://tofutof.github.io/KNOBY/" target="_blank">
+    <img src="assets/button_live_manual.svg" alt="Launch Live Interactive Web Manual" width="460" />
+  </a>
 </p>
 
 </div>
